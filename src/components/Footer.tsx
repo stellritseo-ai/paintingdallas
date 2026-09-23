@@ -73,35 +73,37 @@ export const Footer: React.FC = () => {
   const isEs = language === 'es';
 
   const quickLinks = [
-    { label: isEs ? 'Inicio' : 'Home', href: '#home' },
-    { label: isEs ? 'Sobre Nosotros' : 'About Us', href: '#about' },
-    { label: isEs ? 'Servicios Comerciales' : 'Commercial Services', href: '#services' },
-    { label: isEs ? 'Especialización Comercial' : 'Commercial Only', href: '#commercial-only' },
-    { label: isEs ? 'Proyectos Realizados' : 'Projects Portfolio', href: '#projects' },
-    { label: isEs ? 'Testimonios' : 'Testimonials', href: '#testimonials' },
-    { label: isEs ? 'Área de Cobertura' : 'Service Area', href: '#service-area' },
-    { label: isEs ? 'Solicitar Cotización' : 'Request a Quote', href: '#contact' },
+    { label: isEs ? 'Inicio' : 'Home', href: '/' },
+    { label: isEs ? 'Sobre Nosotros' : 'About Us', href: '/about' },
+    { label: isEs ? 'Servicios Comerciales' : 'Commercial Services', href: '/#services' },
+    { label: isEs ? 'Especialización Comercial' : 'Commercial Only', href: '/#commercial-only' },
+    { label: isEs ? 'Proyectos Realizados' : 'Projects Portfolio', href: '/projects' },
+    { label: isEs ? 'Testimonios' : 'Testimonials', href: '/reviews' },
+    { label: isEs ? 'Área de Cobertura' : 'Service Area', href: '/#service-area' },
+    { label: isEs ? 'Solicitar Cotización' : 'Request a Quote', href: '/contact' },
   ];
 
   const servicesLinks = [
-    { label: isEs ? 'Pintura Interior Comercial' : 'Commercial Interior Painting', href: '#services' },
-    { label: isEs ? 'Pintura Exterior Comercial' : 'Commercial Exterior Painting', href: '#services' },
-    { label: isEs ? 'Pisos Epóxicos y Uretano' : 'Industrial Epoxy Floor Systems', href: '#services' },
-    { label: isEs ? 'Pintura de Naves y Almacenes' : 'Warehouse & Logistics Coatings', href: '#services' },
-    { label: isEs ? 'Repintado de Instalaciones' : 'Commercial Facility Repainting', href: '#services' },
-    { label: isEs ? 'Lavado a Presión y Preparación' : 'Surface Prep & Pressure Washing', href: '#services' },
+    { label: isEs ? 'Pintura Interior Comercial' : 'Commercial Interior Painting', href: '/commercial-interior-painting' },
+    { label: isEs ? 'Pintura Exterior Comercial' : 'Commercial Exterior Painting', href: '/commercial-exterior-painting' },
+    { label: isEs ? 'Pintura de Edificios Comerciales' : 'Commercial Building Painting', href: '/commercial-building-painting' },
+    { label: isEs ? 'Pintura Industrial' : 'Industrial Painting', href: '/industrial-painting' },
+    { label: isEs ? 'Pintura de Propiedades e Instalaciones' : 'Property & Facility Painting', href: '/property-facility-painting' },
+    { label: isEs ? 'Restauración de Pintura Comercial' : 'Commercial Painting Restoration', href: '/commercial-painting-restoration' },
+    { label: isEs ? 'Recubrimientos Especiales' : 'Specialty Coatings', href: '/specialty-coatings' },
+    { label: isEs ? 'Lavado a Presión y Preparación' : 'Surface Prep & Pressure Washing', href: '/pressure-washing-surface-preparation' },
   ];
 
   const serviceAreaLinks = [
-    { label: 'Dallas, TX (HQ)', href: '#service-area' },
-    { label: 'Fort Worth, TX', href: '#service-area' },
-    { label: 'Plano, TX', href: '#service-area' },
-    { label: 'Irving, TX', href: '#service-area' },
-    { label: 'Arlington, TX', href: '#service-area' },
-    { label: 'Frisco, TX', href: '#service-area' },
-    { label: 'Garland, TX', href: '#service-area' },
-    { label: 'Grand Prairie, TX', href: '#service-area' },
-    { label: isEs ? 'Toda el Área DFW (Radio 50-Mi)' : 'All Service Areas (50-Mi)', href: '#service-area' },
+    { label: 'Dallas, TX (HQ)', href: '/#service-area' },
+    { label: 'Fort Worth, TX', href: '/#service-area' },
+    { label: 'Plano, TX', href: '/#service-area' },
+    { label: 'Irving, TX', href: '/#service-area' },
+    { label: 'Arlington, TX', href: '/#service-area' },
+    { label: 'Frisco, TX', href: '/#service-area' },
+    { label: 'Garland, TX', href: '/#service-area' },
+    { label: 'Grand Prairie, TX', href: '/#service-area' },
+    { label: isEs ? 'Toda el Área DFW (Radio 50-Mi)' : 'All Service Areas (50-Mi)', href: '/#service-area' },
   ];
 
   return (
@@ -136,7 +138,7 @@ export const Footer: React.FC = () => {
 
             {/* Phone CTA Banner */}
             <a
-              href="tel:4693605805"
+              href="tel:4693685885"
               className="flex items-center gap-3 w-full bg-gradient-to-r from-[#062F57] to-[#0B477D] border border-white/20 rounded-2xl px-4 py-3 mb-4 shadow-lg hover:border-[#EF3340]/60 transition-colors"
             >
               <div className="h-9 w-9 rounded-xl bg-white/10 flex items-center justify-center shrink-0">
@@ -147,7 +149,7 @@ export const Footer: React.FC = () => {
                   {isEs ? 'Línea de Despacho Comercial' : 'Commercial Dispatch Line'}
                 </span>
                 <span className="font-black text-white text-[15px] tracking-tight leading-tight font-mono">
-                  (469) 360-5805
+                  (469) 368-5885
                 </span>
               </div>
             </a>
@@ -250,9 +252,9 @@ export const Footer: React.FC = () => {
           <MobileCollapsibleSection title={isEs ? 'Contáctenos' : 'Contact Us'}>
             <ul className="space-y-3 text-xs">
               <li>
-                <a href="tel:4693605805" className="flex items-center gap-2.5 text-slate-300">
+                <a href="tel:4693685885" className="flex items-center gap-2.5 text-slate-300">
                   <Phone className="h-3.5 w-3.5 text-[#EF3340] shrink-0" />
-                  <span className="font-mono">(469) 360-5805</span>
+                  <span className="font-mono">(469) 368-5885</span>
                 </a>
               </li>
               <li>
@@ -425,7 +427,7 @@ export const Footer: React.FC = () => {
               <ul className="space-y-3.5 text-sm">
                 <li>
                   <a
-                    href="tel:4693605805"
+                    href="tel:4693685885"
                     className="flex items-center gap-3 text-slate-300 hover:text-white transition-colors group"
                   >
                     <div className="h-8 w-8 rounded-lg bg-[#062F57] border border-white/20 flex items-center justify-center text-[#EF3340] group-hover:bg-[#EF3340] group-hover:text-white transition-all shrink-0">
@@ -436,7 +438,7 @@ export const Footer: React.FC = () => {
                         {isEs ? 'Teléfono' : 'Phone'}
                       </span>
                       <span className="font-semibold text-white tracking-tight text-xs font-mono">
-                        (469) 360-5805
+                        (469) 368-5885
                       </span>
                     </div>
                   </a>

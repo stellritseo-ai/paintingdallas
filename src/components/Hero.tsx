@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 import { useLanguage } from '@/context/LanguageContext';
 import {
   CalendarDays,
@@ -76,30 +77,32 @@ export const Hero: React.FC = () => {
 
             {/* Primary Action Button Cluster (Duke Pattern) */}
             <div className="flex flex-col gap-3.5 sm:flex-row sm:items-center">
-              <button
-                type="button"
-                onClick={openEstimateModal}
+              <Link
+                href="/free-estimate"
                 className="group h-12 rounded-full bg-[#EF3340] hover:bg-[#D8222F] text-white px-7 text-xs sm:text-[13px] font-extrabold uppercase tracking-wide shadow-[0_6px_24px_rgba(239,51,64,0.4)] transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] flex items-center justify-center gap-2.5 cursor-pointer"
               >
                 <CalendarDays className="size-4 transition-transform group-hover:scale-110" />
                 <span>{t.hero.ctaPrimary}</span>
                 <ArrowUpRight className="size-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-              </button>
+              </Link>
 
-              <a
-                href="#contact"
-                className="h-12 rounded-full border border-white/20 bg-white/10 hover:bg-white/20 px-7 text-xs sm:text-[13px] font-extrabold text-white backdrop-blur-xl transition-all duration-200 flex items-center justify-center gap-2 hover:border-white/40"
+              <Link
+                href="/contact"
+                className="h-12 rounded-full border border-white/20 bg-white/10 hover:bg-white/20 px-7 text-xs sm:text-[13px] font-extrabold text-white backdrop-blur-xl transition-all duration-200 flex items-center justify-center gap-2 hover:border-white/40 cursor-pointer"
               >
                 <span>{t.hero.ctaSecondary}</span>
                 <ArrowRight className="size-4" />
-              </a>
+              </Link>
             </div>
           </div>
 
           {/* Right Column: Floating Micro-Capsules (Compact, Non-Form, Luxury Glass Design) */}
           <div className="lg:col-span-5 xl:col-span-5 w-full mt-6 lg:mt-[100px] flex flex-col gap-2.5 lg:items-end">
             {/* Pill 1: 10+ Years Experience */}
-            <div className="group inline-flex items-center gap-3 rounded-full border border-white/15 bg-white/10 hover:bg-white/15 px-4 sm:px-5 py-2.5 backdrop-blur-xl shadow-lg transition-all duration-200 hover:border-[#EF3340]/60 hover:-translate-x-1">
+            <Link
+              href="/about"
+              className="group inline-flex items-center gap-3 rounded-full border border-white/15 bg-white/10 hover:bg-white/15 px-4 sm:px-5 py-2.5 backdrop-blur-xl shadow-lg transition-all duration-200 hover:border-[#EF3340]/60 hover:-translate-x-1 cursor-pointer"
+            >
               <div className="flex size-8 shrink-0 items-center justify-center rounded-full bg-[#EF3340]/20 text-[#EF3340] border border-[#EF3340]/40 transition-transform duration-200 group-hover:scale-110">
                 <Award className="size-4" />
               </div>
@@ -111,10 +114,13 @@ export const Hero: React.FC = () => {
                   {language === 'es' ? 'Trayectoria comprobada en Dallas' : 'Proven Dallas History'}
                 </div>
               </div>
-            </div>
+            </Link>
 
             {/* Pill 2: 50-Mile Service Radius */}
-            <div className="group inline-flex items-center gap-3 rounded-full border border-white/15 bg-white/10 hover:bg-white/15 px-4 sm:px-5 py-2.5 backdrop-blur-xl shadow-lg transition-all duration-200 hover:border-emerald-500/60 hover:-translate-x-1">
+            <Link
+              href="/contact"
+              className="group inline-flex items-center gap-3 rounded-full border border-white/15 bg-white/10 hover:bg-white/15 px-4 sm:px-5 py-2.5 backdrop-blur-xl shadow-lg transition-all duration-200 hover:border-emerald-500/60 hover:-translate-x-1 cursor-pointer"
+            >
               <div className="flex size-8 shrink-0 items-center justify-center rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 transition-transform duration-200 group-hover:scale-110">
                 <MapPin className="size-4" />
               </div>
@@ -126,10 +132,13 @@ export const Hero: React.FC = () => {
                   {language === 'es' ? 'Cobertura completa en DFW' : 'Complete DFW Coverage'}
                 </div>
               </div>
-            </div>
+            </Link>
 
             {/* Pill 3: English & Spanish Crews */}
-            <div className="group inline-flex items-center gap-3 rounded-full border border-white/15 bg-white/10 hover:bg-white/15 px-4 sm:px-5 py-2.5 backdrop-blur-xl shadow-lg transition-all duration-200 hover:border-sky-500/60 hover:-translate-x-1">
+            <Link
+              href="/about"
+              className="group inline-flex items-center gap-3 rounded-full border border-white/15 bg-white/10 hover:bg-white/15 px-4 sm:px-5 py-2.5 backdrop-blur-xl shadow-lg transition-all duration-200 hover:border-sky-500/60 hover:-translate-x-1 cursor-pointer"
+            >
               <div className="flex size-8 shrink-0 items-center justify-center rounded-full bg-sky-500/20 text-sky-400 border border-sky-500/40 transition-transform duration-200 group-hover:scale-110">
                 <ShieldCheck className="size-4" />
               </div>
@@ -147,7 +156,7 @@ export const Hero: React.FC = () => {
                   {language === 'es' ? 'Supervisión bilingüe en sitio' : 'Bilingual Site Supervision'}
                 </div>
               </div>
-            </div>
+            </Link>
           </div>
         </div>
       </div>

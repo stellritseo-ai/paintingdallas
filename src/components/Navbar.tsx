@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect, useRef } from 'react';
+import { usePathname } from 'next/navigation';
 import { createPortal } from 'react-dom';
 import { useLanguage } from '@/context/LanguageContext';
 import { ServiceItem } from '@/data/translations';
@@ -27,11 +28,11 @@ import {
 
 export const navigationLinks = [
   { label: 'Home', labelEs: 'Inicio', href: '#home', id: 'home' },
-  { label: 'About Us', labelEs: 'Sobre Nosotros', href: '#about', id: 'about' },
+  { label: 'About Us', labelEs: 'Sobre Nosotros', href: '/about', id: 'about' },
   { label: 'Commercial Painting', labelEs: 'Pintura Comercial', href: '#services', id: 'services' },
-  { label: 'Reviews', labelEs: 'Reseñas', href: '#reviews', id: 'reviews' },
-  { label: 'Projects', labelEs: 'Proyectos', href: '#projects', id: 'projects' },
-  { label: 'Contact Us', labelEs: 'Contacto', href: '#contact', id: 'contact' },
+  { label: 'Reviews', labelEs: 'Reseñas', href: '/reviews', id: 'reviews' },
+  { label: 'Projects', labelEs: 'Proyectos', href: '/projects', id: 'projects' },
+  { label: 'Contact Us', labelEs: 'Contacto', href: '/contact', id: 'contact' },
 ];
 
 const serviceIcons: Record<string, React.ElementType> = {
@@ -81,13 +82,43 @@ export const SpainFlag: React.FC<{ className?: string }> = ({ className = 'w-3.5
 
 export const Navbar: React.FC = () => {
   const { t, language, setLanguage, openEstimateModal, openServiceModal } = useLanguage();
+  const pathname = usePathname();
+  const isAboutPage = pathname === '/about';
+  const isContactPage = pathname === '/contact';
+  const isReviewsPage = pathname === '/reviews';
+  const isFreeEstimatePage = pathname === '/free-estimate';
+  const isInteriorPage = pathname === '/commercial-interior-painting';
+  const isExteriorPage = pathname === '/commercial-exterior-painting';
+  const isBuildingPage = pathname === '/commercial-building-painting';
+  const isIndustrialPage = pathname === '/industrial-painting';
+  const isFacilityPage = pathname === '/property-facility-painting';
+  const isRestorationPage = pathname === '/commercial-painting-restoration';
+  const isSurfacePrepPage = pathname === '/pressure-washing-surface-preparation';
+  const isSpecialtyPage = pathname === '/specialty-coatings';
+  const isProjectsPage = pathname === '/projects';
+  const isSubPage = isAboutPage || isContactPage || isReviewsPage || isProjectsPage || isFreeEstimatePage || isInteriorPage || isExteriorPage || isBuildingPage || isIndustrialPage || isFacilityPage || isRestorationPage || isSurfacePrepPage || isSpecialtyPage;
+
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState('home');
+  const [activeSection, setActiveSection] = useState(
+    isProjectsPage ? 'projects' : isFreeEstimatePage ? 'estimate' : isReviewsPage ? 'reviews' : isContactPage ? 'contact' : isAboutPage ? 'about' : (isInteriorPage || isExteriorPage || isBuildingPage || isIndustrialPage || isFacilityPage || isRestorationPage || isSurfacePrepPage || isSpecialtyPage) ? 'services' : 'home'
+  );
   const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const dropdownTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const dropdownRef = useRef<HTMLDivElement | null>(null);
+
+  const getHref = (id: string, defaultHref: string) => {
+    if (id === 'about') return '/about';
+    if (id === 'contact') return '/contact';
+    if (id === 'reviews') return '/reviews';
+    if (id === 'projects') return '/projects';
+    if (isSubPage) {
+      if (id === 'home') return '/';
+      return defaultHref.startsWith('#') ? `/${defaultHref}` : defaultHref;
+    }
+    return defaultHref;
+  };
 
   const handleServicesMouseEnter = () => {
     if (dropdownTimeoutRef.current) {
@@ -107,9 +138,11 @@ export const Navbar: React.FC = () => {
     setServicesDropdownOpen(false);
     setMobileMenuOpen(false);
     openServiceModal(service);
-    const el = document.getElementById('services');
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
+    if (!isSubPage) {
+      const el = document.getElementById('services');
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+      }
     }
   };
 
@@ -154,6 +187,74 @@ export const Navbar: React.FC = () => {
   }, []);
 
   useEffect(() => {
+    if (isInteriorPage || isExteriorPage || isBuildingPage || isIndustrialPage || isFacilityPage || isRestorationPage || isSurfacePrepPage || isSpecialtyPage) {
+      setActiveSection('services');
+      const handleScrollServices = () => {
+        setScrolled(window.scrollY > 28);
+      };
+      handleScrollServices();
+      window.addEventListener('scroll', handleScrollServices, { passive: true });
+      return () => window.removeEventListener('scroll', handleScrollServices);
+    }
+
+    if (isFreeEstimatePage) {
+      setActiveSection('estimate');
+      const handleScrollEstimate = () => {
+        setScrolled(window.scrollY > 28);
+      };
+      handleScrollEstimate();
+      window.addEventListener('scroll', handleScrollEstimate, { passive: true });
+      return () => window.removeEventListener('scroll', handleScrollEstimate);
+    }
+
+    if (isReviewsPage) {
+      setActiveSection('reviews');
+      const handleScrollReviews = () => {
+        setScrolled(window.scrollY > 28);
+      };
+      handleScrollReviews();
+      window.addEventListener('scroll', handleScrollReviews, { passive: true });
+      return () => window.removeEventListener('scroll', handleScrollReviews);
+    }
+
+    if (isContactPage) {
+      setActiveSection('contact');
+      const handleScrollContact = () => {
+        setScrolled(window.scrollY > 28);
+      };
+      handleScrollContact();
+      window.addEventListener('scroll', handleScrollContact, { passive: true });
+      return () => window.removeEventListener('scroll', handleScrollContact);
+    }
+
+    if (isAboutPage) {
+      setActiveSection('about');
+      const handleScrollAbout = () => {
+        const scrollY = window.scrollY;
+        setScrolled(scrollY > 28);
+        const contactEl = document.getElementById('contact');
+        if (contactEl && scrollY + 200 >= contactEl.offsetTop) {
+          setActiveSection('contact');
+        } else {
+          setActiveSection('about');
+        }
+      };
+
+      handleScrollAbout();
+      window.addEventListener('scroll', handleScrollAbout, { passive: true });
+      return () => window.removeEventListener('scroll', handleScrollAbout);
+    }
+
+    if (isProjectsPage) {
+      setActiveSection('projects');
+      const handleScrollProjects = () => {
+        setScrolled(window.scrollY > 28);
+      };
+      handleScrollProjects();
+      window.addEventListener('scroll', handleScrollProjects, { passive: true });
+      return () => window.removeEventListener('scroll', handleScrollProjects);
+    }
+
     const handleScroll = () => {
       const scrollY = window.scrollY;
       setScrolled(scrollY > 28);
@@ -178,7 +279,7 @@ export const Navbar: React.FC = () => {
     handleScroll();
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [isAboutPage, isContactPage, isReviewsPage, isProjectsPage, isFreeEstimatePage, isInteriorPage]);
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-black/[0.08] bg-white/95 backdrop-blur-2xl text-[#0F172A] shadow-[0_4px_25px_-4px_rgba(15,23,42,0.06)] transition-all duration-300">
@@ -240,7 +341,7 @@ export const Navbar: React.FC = () => {
           }`}
       >
         {/* Brand Logo */}
-        <a href="#home" className="flex items-center shrink-0 group focus:outline-none">
+        <a href={isSubPage ? '/' : '#home'} className="flex items-center shrink-0 group focus:outline-none">
           <Logo variant="horizontal" theme="light" compact={scrolled} />
         </a>
 
@@ -253,6 +354,7 @@ export const Navbar: React.FC = () => {
             {navigationLinks.map((item) => {
               const isActive = activeSection === item.id;
               const displayLabel = language === 'es' ? item.labelEs : item.label;
+              const itemHref = getHref(item.id, item.href);
 
               if (item.id === 'services') {
                 return (
@@ -264,7 +366,7 @@ export const Navbar: React.FC = () => {
                     onMouseLeave={handleServicesMouseLeave}
                   >
                     <a
-                      href={item.href}
+                      href={itemHref}
                       onClick={() => setActiveSection(item.id)}
                       className={`relative inline-flex items-center justify-center gap-1.5 rounded-full px-3.5 py-1.5 text-[11px] font-extrabold uppercase tracking-[0.05em] transition-all duration-200 whitespace-nowrap cursor-pointer ${isActive || servicesDropdownOpen
                         ? 'bg-white text-[#062F57] shadow-xs ring-1 ring-[#062F57]/20 font-black'
@@ -304,7 +406,7 @@ export const Navbar: React.FC = () => {
                             </span>
                           </div>
                           <a
-                            href="#services"
+                            href={isSubPage ? '/#services' : '#services'}
                             onClick={() => {
                               setServicesDropdownOpen(false);
                               setActiveSection('services');
@@ -320,6 +422,64 @@ export const Navbar: React.FC = () => {
                         <div className="grid grid-cols-2 gap-2 p-3 bg-white">
                           {t.services.items.map((service) => {
                             const Icon = serviceIcons[service.id] || Building2;
+                            const isInterior = service.id === 'interior';
+                            const isExterior = service.id === 'exterior';
+                            const isBuilding = service.id === 'building';
+                            const isIndustrial = service.id === 'industrial';
+                            const isFacility = service.id === 'facility';
+                            const isRestoration = service.id === 'restoration';
+                            const isSurfacePrep = service.id === 'surface_prep';
+                            const isSpecialty = service.id === 'specialty';
+
+                            if (isInterior || isExterior || isBuilding || isIndustrial || isFacility || isRestoration || isSurfacePrep || isSpecialty) {
+                              const href = isInterior
+                                ? '/commercial-interior-painting'
+                                : isExterior
+                                ? '/commercial-exterior-painting'
+                                : isBuilding
+                                ? '/commercial-building-painting'
+                                : isIndustrial
+                                ? '/industrial-painting'
+                                : isFacility
+                                ? '/property-facility-painting'
+                                : isRestoration
+                                ? '/commercial-painting-restoration'
+                                : isSurfacePrep
+                                ? '/pressure-washing-surface-preparation'
+                                : '/specialty-coatings';
+                              return (
+                                <a
+                                  key={service.id}
+                                  href={href}
+                                  onClick={() => setServicesDropdownOpen(false)}
+                                  className="group/item flex items-start gap-3 p-2.5 rounded-xl border border-transparent hover:border-slate-200/90 hover:bg-slate-50/90 transition-all duration-200 cursor-pointer text-left relative"
+                                >
+                                  {/* Icon Badge */}
+                                  <div className="flex size-9 items-center justify-center rounded-xl bg-slate-100/90 text-[#062F57] border border-slate-200/70 shrink-0 transition-all duration-200 group-hover/item:bg-[#062F57] group-hover/item:border-[#062F57] group-hover/item:text-white group-hover/item:shadow-xs group-hover/item:scale-105">
+                                    <Icon className="size-4.5" />
+                                  </div>
+
+                                  {/* Text Details */}
+                                  <div className="flex-1 min-w-0">
+                                    <div className="flex items-center gap-1.5 mb-0.5">
+                                      <span className="text-[10px] font-mono font-black text-slate-400 group-hover/item:text-[#EF3340] transition-colors">
+                                        {service.number}
+                                      </span>
+                                      <span className="text-[11px] font-extrabold uppercase tracking-tight text-slate-800 group-hover/item:text-[#062F57] transition-colors truncate">
+                                        {service.title}
+                                      </span>
+                                    </div>
+                                    <p className="text-[10.5px] leading-snug text-slate-500 line-clamp-1 group-hover/item:text-slate-600">
+                                      {service.shortDesc}
+                                    </p>
+                                  </div>
+
+                                  {/* Subtle Hover Arrow Indicator */}
+                                  <ChevronRight className="size-3.5 text-slate-300 group-hover/item:text-[#EF3340] group-hover/item:translate-x-0.5 transition-all opacity-0 group-hover/item:opacity-100 shrink-0 self-center" />
+                                </a>
+                              );
+                            }
+
                             return (
                               <div
                                 key={service.id}
@@ -376,24 +536,21 @@ export const Navbar: React.FC = () => {
 
                           <div className="flex items-center gap-3">
                             <a
-                              href="tel:4693605805"
+                              href="tel:4693685885"
                               className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white border border-slate-200 text-[#062F57] hover:text-[#EF3340] hover:border-[#EF3340]/30 transition-all text-xs font-bold shadow-2xs"
                             >
                               <Phone className="size-3 text-[#EF3340]" />
-                              <span>(469) 360-5805</span>
+                              <span>(469) 368-5885</span>
                             </a>
 
-                            <button
-                              type="button"
-                              onClick={() => {
-                                setServicesDropdownOpen(false);
-                                openEstimateModal();
-                              }}
+                            <a
+                              href="/free-estimate"
+                              onClick={() => setServicesDropdownOpen(false)}
                               className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-[#EF3340] hover:bg-[#D8222F] text-white text-[11px] font-black uppercase tracking-wider shadow-sm transition-all hover:scale-[1.02] cursor-pointer"
                             >
                               <span>{t.nav.getEstimate}</span>
                               <ArrowUpRight className="size-3" />
-                            </button>
+                            </a>
                           </div>
                         </div>
                       </div>
@@ -405,7 +562,7 @@ export const Navbar: React.FC = () => {
               return (
                 <a
                   key={item.id}
-                  href={item.href}
+                  href={itemHref}
                   onClick={() => setActiveSection(item.id)}
                   className={`relative inline-flex items-center justify-center rounded-full px-3.5 py-1.5 text-[11px] font-extrabold uppercase tracking-[0.05em] transition-all duration-200 whitespace-nowrap ${isActive
                     ? 'bg-white text-[#062F57] shadow-xs ring-1 ring-[#062F57]/20 font-black'
@@ -424,36 +581,35 @@ export const Navbar: React.FC = () => {
 
           {/* Phone Pill */}
           <a
-            href="tel:4693605805"
+            href="tel:4693685885"
             className="group inline-flex items-center gap-2 rounded-full border border-black/10 bg-white px-3.5 py-2 text-xs font-bold text-[#0F172A] shadow-xs transition-all duration-200 hover:border-[#EF3340]/40 hover:text-[#EF3340] hover:-translate-y-0.5"
           >
             <span className="flex size-5 items-center justify-center rounded-full bg-[#EF3340]/15 text-[#EF3340] transition-transform duration-200 group-hover:scale-110">
               <Phone className="size-2.5" />
             </span>
-            <span className="font-bold whitespace-nowrap">(469) 360-5805</span>
+            <span className="font-bold whitespace-nowrap">(469) 368-5885</span>
           </a>
 
           {/* Primary Action Button */}
-          <button
-            type="button"
-            onClick={openEstimateModal}
+          <a
+            href="/free-estimate"
             className="group h-10 sm:h-11 rounded-full bg-[#EF3340] hover:bg-[#D8222F] text-white px-5 text-xs font-extrabold tracking-wide uppercase shadow-[0_6px_20px_rgba(239,51,64,0.3)] transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] flex items-center gap-1.5 cursor-pointer whitespace-nowrap"
           >
             <CalendarDays className="size-3.5 transition-transform group-hover:scale-110" />
             <span>{t.nav.getEstimate}</span>
             <ArrowUpRight className="size-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-          </button>
+          </a>
         </div>
 
         {/* Mobile & Tablet Controls (< xl) */}
         <div className="flex xl:hidden items-center gap-2 shrink-0">
           {/* Tablet Quick Call Button */}
           <a
-            href="tel:4693605805"
+            href="tel:4693685885"
             className="hidden sm:inline-flex items-center gap-1.5 rounded-full border border-black/10 bg-white px-3 py-1.5 text-xs font-bold text-[#0F172A] shadow-xs"
           >
             <Phone className="size-3 text-[#EF3340]" />
-            <span>(469) 360-5805</span>
+            <span>(469) 368-5885</span>
           </a>
 
           {/* Language Toggle Button */}
@@ -476,13 +632,12 @@ export const Navbar: React.FC = () => {
           </button>
 
           {/* Mobile Quote Pill (Available on 380px+ viewports; on smaller phones, the fixed bottom bar provides instant Quote CTA) */}
-          <button
-            type="button"
-            onClick={openEstimateModal}
+          <a
+            href="/free-estimate"
             className="hidden min-[380px]:inline-flex px-3.5 py-1.5 text-xs font-bold text-white uppercase rounded-full bg-[#EF3340] shadow-sm hover:bg-[#D8222F] cursor-pointer"
           >
             {language === 'en' ? 'Quote' : 'Cotizar'}
-          </button>
+          </a>
 
           {/* Hamburger Menu Button */}
           <button
@@ -516,7 +671,7 @@ export const Navbar: React.FC = () => {
             {/* Drawer Top Header: Logo + Close Button */}
             <div className="px-5 py-4 border-b border-slate-100 flex items-center justify-between shrink-0 bg-slate-50/90 pt-[max(1rem,env(safe-area-inset-top))]">
               <a
-                href="#home"
+                href={isSubPage ? '/' : '#home'}
                 onClick={() => setMobileMenuOpen(false)}
                 className="flex items-center shrink-0 focus:outline-none"
               >
@@ -565,13 +720,14 @@ export const Navbar: React.FC = () => {
             <div className="flex-1 overflow-y-auto px-5 py-3 space-y-1">
               {navigationLinks.map((item) => {
                 const displayLabel = language === 'es' ? item.labelEs : item.label;
+                const itemHref = getHref(item.id, item.href);
 
                 if (item.id === 'services') {
                   return (
                     <div key={item.id} className="border-b border-slate-100 pb-1">
                       <div className="flex items-center justify-between py-2.5">
                         <a
-                          href={item.href}
+                          href={itemHref}
                           onClick={() => {
                             setMobileMenuOpen(false);
                             setActiveSection(item.id);
@@ -602,6 +758,51 @@ export const Navbar: React.FC = () => {
                           </div>
                           {t.services.items.map((service) => {
                             const Icon = serviceIcons[service.id] || Building2;
+                            const isInterior = service.id === 'interior';
+                            const isExterior = service.id === 'exterior';
+                            const isBuilding = service.id === 'building';
+                            const isIndustrial = service.id === 'industrial';
+                            const isFacility = service.id === 'facility';
+                            const isRestoration = service.id === 'restoration';
+                            const isSurfacePrep = service.id === 'surface_prep';
+                            const isSpecialty = service.id === 'specialty';
+
+                            if (isInterior || isExterior || isBuilding || isIndustrial || isFacility || isRestoration || isSurfacePrep || isSpecialty) {
+                              const href = isInterior
+                                ? '/commercial-interior-painting'
+                                : isExterior
+                                ? '/commercial-exterior-painting'
+                                : isBuilding
+                                ? '/commercial-building-painting'
+                                : isIndustrial
+                                ? '/industrial-painting'
+                                : isFacility
+                                ? '/property-facility-painting'
+                                : isRestoration
+                                ? '/commercial-painting-restoration'
+                                : isSurfacePrep
+                                ? '/pressure-washing-surface-preparation'
+                                : '/specialty-coatings';
+                              return (
+                                <a
+                                  key={service.id}
+                                  href={href}
+                                  onClick={() => setMobileMenuOpen(false)}
+                                  className="w-full flex items-center gap-2.5 px-2.5 py-2 rounded-lg text-left text-slate-700 hover:text-[#062F57] hover:bg-white transition-all group cursor-pointer"
+                                >
+                                  <div className="flex size-7 items-center justify-center rounded-md bg-white border border-slate-200 text-[#062F57] group-hover:bg-[#062F57] group-hover:text-white transition-colors shrink-0">
+                                    <Icon className="size-3.5" />
+                                  </div>
+                                  <div className="flex-1 min-w-0">
+                                    <div className="text-[11px] font-bold uppercase truncate">
+                                      {service.title}
+                                    </div>
+                                  </div>
+                                  <ChevronRight className="size-3 text-slate-400 group-hover:text-[#EF3340] shrink-0" />
+                                </a>
+                              );
+                            }
+
                             return (
                               <button
                                 key={service.id}
@@ -622,7 +823,7 @@ export const Navbar: React.FC = () => {
                             );
                           })}
                           <a
-                            href="#services"
+                            href={isSubPage ? '/#services' : '#services'}
                             onClick={() => {
                               setMobileMenuOpen(false);
                               setActiveSection('services');
@@ -641,7 +842,7 @@ export const Navbar: React.FC = () => {
                 return (
                   <a
                     key={item.id}
-                    href={item.href}
+                    href={itemHref}
                     onClick={() => {
                       setMobileMenuOpen(false);
                       setActiveSection(item.id);
@@ -658,24 +859,21 @@ export const Navbar: React.FC = () => {
             {/* Bottom Sticky Action Bar */}
             <div className="p-4 sm:p-5 border-t border-slate-100 bg-slate-50/90 space-y-2.5 shrink-0 pb-[max(1.25rem,env(safe-area-inset-bottom))]">
               <a
-                href="tel:4693605805"
+                href="tel:4693685885"
                 className="flex items-center justify-center gap-2 w-full py-3 bg-[#062F57] hover:bg-[#0B477D] text-white text-xs font-bold uppercase tracking-wider rounded-full shadow-sm transition-colors"
               >
                 <Phone className="size-3.5 text-[#EF3340]" />
-                <span>(469) 360-5805</span>
+                <span>(469) 368-5885</span>
               </a>
 
-              <button
-                type="button"
-                onClick={() => {
-                  setMobileMenuOpen(false);
-                  openEstimateModal();
-                }}
+              <a
+                href="/free-estimate"
+                onClick={() => setMobileMenuOpen(false)}
                 className="w-full py-3 bg-[#EF3340] hover:bg-[#D8222F] text-white text-xs font-bold uppercase tracking-wider rounded-full shadow-md transition-all hover:scale-[1.01] active:scale-[0.99] flex items-center justify-center gap-1.5 cursor-pointer"
               >
                 <span>{t.nav.getEstimate}</span>
                 <ArrowUpRight className="size-3.5" />
-              </button>
+              </a>
 
               <div className="text-center pt-1 text-[10px] text-slate-400 font-medium">
                 {language === 'es'

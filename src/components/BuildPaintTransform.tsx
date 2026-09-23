@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 import { useLanguage } from '@/context/LanguageContext';
 import {
   Phone,
@@ -123,7 +124,7 @@ export const BuildPaintTransform: React.FC = () => {
               <div className="absolute -inset-0.5 bg-gradient-to-r from-red-600 to-orange-500 rounded-2xl blur opacity-35 group-hover:opacity-75 transition duration-500 animate-pulse" />
 
               <a
-                href="tel:4693605805"
+                href="tel:4693685885"
                 className="relative flex items-center justify-between gap-3 sm:gap-4 rounded-2xl bg-gradient-to-r from-red-600 to-[#d62828] p-3.5 sm:p-5 font-semibold text-white shadow-2xl hover:brightness-110 transition-all duration-300 w-full"
               >
                 <div className="flex items-center gap-3 sm:gap-3.5 min-w-0">
@@ -135,7 +136,7 @@ export const BuildPaintTransform: React.FC = () => {
                       {isEs ? 'Línea Directa Comercial' : 'Commercial Estimate Hotline'}
                     </span>
                     <span className="block text-lg min-[360px]:text-xl sm:text-2xl font-black leading-tight tracking-tight mt-0.5 font-mono truncate">
-                      (469) 360-5805
+                      (469) 368-5885
                     </span>
                   </div>
                 </div>
@@ -143,16 +144,15 @@ export const BuildPaintTransform: React.FC = () => {
               </a>
             </div>
 
-            {/* Request Estimate Modal Button */}
-            <button
-              type="button"
-              onClick={openEstimateModal}
+            {/* Request Estimate Link Button */}
+            <Link
+              href="/free-estimate"
               className="w-full max-w-sm h-11 rounded-xl bg-white/10 hover:bg-white/15 border border-white/20 hover:border-white/35 text-white text-xs sm:text-[13px] font-black uppercase tracking-wider transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer shadow-lg backdrop-blur-md hover:scale-[1.01] active:scale-[0.99]"
             >
               <CalendarDays className="size-4 text-[#EF3340]" />
               <span>{t.transform.cta}</span>
               <ArrowRight className="size-3.5 text-white/70" />
-            </button>
+            </Link>
 
             {/* Live Dispatcher Status Glass Badge */}
             <div className="flex items-center gap-2 rounded-xl bg-white/5 border border-white/10 px-4 py-2.5 text-xs text-white/80 w-full max-w-sm justify-center sm:justify-start">

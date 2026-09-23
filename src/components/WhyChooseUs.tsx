@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useRef, useState } from 'react';
+import Link from 'next/link';
 import { useLanguage } from '@/context/LanguageContext';
 import {
   ShieldCheck,
@@ -202,21 +203,20 @@ export const WhyChooseUs: React.FC = () => {
 
             {/* Dual CTA Buttons */}
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
-              <button
-                type="button"
-                onClick={openEstimateModal}
+              <Link
+                href="/free-estimate"
                 className="inline-flex w-full sm:w-auto items-center justify-center gap-2 bg-[#020F1D] hover:bg-[#062F57] text-white text-[11px] font-black uppercase tracking-widest rounded-full px-6 py-3 transition-all duration-300 shadow-md hover:scale-[1.03] active:scale-[0.97] cursor-pointer"
               >
                 <span>{isEs ? 'Solicitar Cotización' : 'Request Proposal'}</span>
                 <ArrowRight className="w-3.5 h-3.5" />
-              </button>
+              </Link>
 
               <a
-                href="tel:4693605805"
+                href="tel:4693685885"
                 className="inline-flex w-full sm:w-auto items-center justify-center gap-2 bg-gradient-to-r from-[#EF3340] to-[#D8222F] text-white border border-[#EF3340]/50 text-[11px] font-black uppercase tracking-widest rounded-full px-6 py-3 transition-all duration-300 shadow-md hover:scale-[1.03] active:scale-[0.97] cursor-pointer"
               >
                 <Phone className="w-3.5 h-3.5" />
-                <span>(469) 360-5805</span>
+                <span>(469) 368-5885</span>
               </a>
             </div>
           </div>

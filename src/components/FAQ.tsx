@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Link from 'next/link';
 import { useLanguage } from '@/context/LanguageContext';
 import { HelpCircle, ChevronDown, Phone, ArrowUpRight, ShieldCheck, Clock } from 'lucide-react';
 
@@ -130,11 +131,11 @@ export const FAQ: React.FC = () => {
                     DIRECT ESTIMATING HOTLINE
                   </span>
                   <a
-                    href="tel:4693605805"
+                    href="tel:4693685885"
                     className="text-xl sm:text-2xl font-mono font-black text-white hover:text-[#EF3340] transition-colors flex items-center gap-2"
                   >
                     <Phone className="size-5 text-[#EF3340]" />
-                    <span>(469) 360-5805</span>
+                    <span>(469) 368-5885</span>
                   </a>
                   <div className="text-[11px] text-slate-400 flex items-center gap-1.5 pt-1">
                     <Clock className="size-3 text-emerald-400" />
@@ -143,14 +144,13 @@ export const FAQ: React.FC = () => {
                 </div>
 
                 {/* CTA Button */}
-                <button
-                  type="button"
-                  onClick={openEstimateModal}
+                <Link
+                  href="/free-estimate"
                   className="w-full py-4 rounded-full bg-[#EF3340] hover:bg-[#D8222F] text-white text-xs font-extrabold uppercase tracking-wide shadow-[0_6px_20px_rgba(239,51,64,0.35)] transition-all duration-200 hover:scale-[1.02] flex items-center justify-center gap-2 cursor-pointer"
                 >
                   <span>Request A Free Estimate</span>
                   <ArrowUpRight className="size-4" />
-                </button>
+                </Link>
               </div>
             </div>
           </div>

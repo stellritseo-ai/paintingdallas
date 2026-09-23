@@ -29,6 +29,7 @@ export const metadata: Metadata = {
   authors: [{ name: 'Painting Dallas' }],
   creator: 'Painting Dallas',
   publisher: 'Painting Dallas',
+  metadataBase: new URL('https://paintingdallas.com'),
   openGraph: {
     title: 'Painting Dallas | Commercial Painting & Restoration Contractors',
     description:
@@ -37,6 +38,11 @@ export const metadata: Metadata = {
     siteName: 'Painting Dallas',
     locale: 'en_US',
     type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Painting Dallas | Commercial Painting Contractors',
+    description: 'Premier commercial painting and facility restoration contractors serving the Dallas-Fort Worth metroplex.',
   },
   robots: {
     index: true,
@@ -62,7 +68,7 @@ const jsonLd = {
   description:
     'Specialized commercial painting and restoration contractor serving corporate, industrial, retail, and institutional properties throughout a 50-mile radius of Dallas, TX.',
   url: 'https://paintingdallas.com',
-  telephone: '+1-469-360-5805',
+  telephone: '+1-469-368-5885',
   email: 'info@paintingdallas.com',
   priceRange: '$$$',
   address: {

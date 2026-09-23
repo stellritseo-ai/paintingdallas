@@ -147,7 +147,7 @@ export const EstimateModal: React.FC = () => {
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                     suppressHydrationWarning
                     className="w-full px-4 py-2.5 rounded-xl border border-black/15 bg-slate-50 text-xs font-mono text-[#0F172A] focus:outline-none focus:border-[#062F57]"
-                    placeholder="(469) 360-5805"
+                    placeholder="(469) 368-5885"
                   />
                 </div>
                 <div>

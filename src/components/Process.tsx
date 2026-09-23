@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 import { useLanguage } from '@/context/LanguageContext';
 import {
   Search,
@@ -464,14 +465,13 @@ export const Process: React.FC = () => {
 
         {/* ── Bottom Estimate CTA ────────────────────────────────────────── */}
         <div className="mt-10 sm:mt-12 lg:mt-0 text-center">
-          <button
-            type="button"
-            onClick={openEstimateModal}
+          <Link
+            href="/free-estimate"
             className="inline-flex items-center gap-2 bg-[#EF3340] hover:bg-[#D8222F] text-white rounded-full px-7 py-3.5 text-xs sm:text-[13px] font-black uppercase tracking-wider shadow-[0_8px_25px_rgba(239,51,64,0.3)] transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] cursor-pointer relative z-20 lg:mt-[-200px] lg:mb-[-100px]"
           >
             <span>{isEs ? 'Comenzar Su Proyecto Comercial' : 'Start Your Commercial Project'}</span>
             <ArrowRight className="size-4" />
-          </button>
+          </Link>
         </div>
 
       </div>

@@ -15,7 +15,7 @@ export interface ServiceItem {
 export interface ProjectItem {
   id: string;
   title: string;
-  category: 'office' | 'retail' | 'industrial' | 'building' | 'facility' | 'restoration';
+  category: 'office' | 'retail' | 'industrial' | 'building' | 'facility' | 'restoration' | 'healthcare' | 'specialty';
   categoryLabel: string;
   location: string;
   scope: string;
@@ -54,7 +54,7 @@ export const translations = {
       contact: 'Contact',
       getEstimate: 'GET A FREE ESTIMATE',
       callNow: 'CALL NOW',
-      phone: '(469) 360-5805',
+      phone: '(469) 368-5885',
       commercialQuote: 'REQUEST A COMMERCIAL QUOTE',
     },
     hero: {
@@ -727,7 +727,7 @@ export const translations = {
       contact: 'Contacto',
       getEstimate: 'OBTENER PRESUPUESTO GRATIS',
       callNow: 'LLAMAR AHORA',
-      phone: '(469) 360-5805',
+      phone: '(469) 368-5885',
       commercialQuote: 'SOLICITAR COTIZACIÓN COMERCIAL',
     },
     hero: {

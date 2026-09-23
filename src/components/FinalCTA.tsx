@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 import { useLanguage } from '@/context/LanguageContext';
 import {
   ArrowUpRight,
@@ -71,22 +72,21 @@ export const FinalCTA: React.FC = () => {
 
         {/* Dual Actions */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 sm:gap-4 mb-10">
-          <button
-            type="button"
-            onClick={openEstimateModal}
+          <Link
+            href="/free-estimate"
             className="w-full sm:w-auto h-12 sm:h-13 rounded-xl bg-[#EF3340] hover:bg-[#D8222F] text-white px-7 sm:px-8 text-xs sm:text-[13px] font-black tracking-wider uppercase shadow-[0_8px_25px_rgba(239,51,64,0.35)] transition-all duration-200 hover:scale-[1.02] inline-flex items-center justify-center gap-2.5 cursor-pointer group"
           >
             <CalendarDays className="size-4" />
             <span>{t.finalCta.btnEstimate}</span>
             <ArrowUpRight className="size-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-          </button>
+          </Link>
 
           <a
-            href="tel:4693605805"
+            href="tel:4693685885"
             className="w-full sm:w-auto h-12 sm:h-13 rounded-xl border border-white/20 bg-white/10 hover:bg-white/15 text-white px-7 sm:px-8 text-xs sm:text-[13px] font-black tracking-wider uppercase backdrop-blur-md transition-all duration-200 inline-flex items-center justify-center gap-2.5 group cursor-pointer"
           >
             <Phone className="size-4 text-[#EF3340] group-hover:rotate-12 transition-transform" />
-            <span>{isEs ? 'Llamar: (469) 360-5805' : 'Call (469) 360-5805'}</span>
+            <span>{isEs ? 'Llamar: (469) 368-5885' : 'Call (469) 368-5885'}</span>
           </a>
         </div>
 

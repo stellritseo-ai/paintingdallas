@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Link from 'next/link';
 import { useLanguage } from '@/context/LanguageContext';
 import {
   Navigation,
@@ -201,13 +202,12 @@ export const ServiceArea: React.FC = () => {
                 </div>
               </div>
 
-              <button
-                type="button"
-                onClick={openEstimateModal}
-                className="w-full sm:w-auto shrink-0 px-4 py-2 rounded-xl bg-[#EF3340] hover:bg-[#D8222F] text-white text-[11px] font-black uppercase tracking-wider transition-all duration-200 cursor-pointer shadow-xs"
+              <Link
+                href="/free-estimate"
+                className="w-full sm:w-auto shrink-0 px-4 py-2 rounded-xl bg-[#EF3340] hover:bg-[#D8222F] text-white text-[11px] font-black uppercase tracking-wider transition-all duration-200 cursor-pointer shadow-xs text-center"
               >
                 {isEs ? 'Verificar Cobertura' : 'Check Dispatch'}
-              </button>
+              </Link>
             </div>
           </div>
 
@@ -268,14 +268,13 @@ export const ServiceArea: React.FC = () => {
                   </div>
                 </div>
 
-                <button
-                  type="button"
-                  onClick={openEstimateModal}
+                <Link
+                  href="/free-estimate"
                   className="inline-flex items-center gap-1 text-[11px] font-black uppercase tracking-wider text-[#062F57] hover:text-[#EF3340] transition-colors cursor-pointer shrink-0 group"
                 >
                   <span>{isEs ? 'Visita' : 'Walk'}</span>
                   <ArrowRight className="size-3 group-hover:translate-x-0.5 transition-transform" />
-                </button>
+                </Link>
               </div>
             </div>
           </div>

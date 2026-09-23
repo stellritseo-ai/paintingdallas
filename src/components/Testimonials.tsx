@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 import { useLanguage } from '@/context/LanguageContext';
 import {
   Star,
@@ -429,14 +430,13 @@ export const Testimonials: React.FC = () => {
             </div>
           </div>
 
-          <button
-            type="button"
-            onClick={openEstimateModal}
+          <Link
+            href="/reviews"
             className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-wider text-[#062F57] hover:text-[#EF3340] transition-colors cursor-pointer group"
           >
-            <span>{isEs ? 'Solicitar Referencias de Proyectos' : 'Request Commercial References'}</span>
+            <span>{isEs ? 'Ver Todas Las Reseñas y Referencias' : 'View All Client Reviews & Ratings'}</span>
             <ArrowRight className="size-3.5 group-hover:translate-x-1 transition-transform" />
-          </button>
+          </Link>
         </div>
       </div>
     </section>

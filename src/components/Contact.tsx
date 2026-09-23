@@ -99,8 +99,8 @@ export const Contact: React.FC = () => {
                 <Item
                   icon={Phone}
                   label={isEs ? 'Línea Directa Comercial' : 'Direct Phone & Commercial Hotline'}
-                  value="(469) 360-5805"
-                  href="tel:4693605805"
+                  value="(469) 368-5885"
+                  href="tel:4693685885"
                   isCall
                 />
                 <Item
@@ -142,8 +142,8 @@ export const Contact: React.FC = () => {
                 </h3>
                 <p className="mt-3 text-sm text-slate-600 font-semibold max-w-sm">
                   {isEs
-                    ? 'Responderemos dentro de las 24 horas. Para urgencias, llame al (469) 360-5805.'
-                    : "We'll respond within 24 hours. For urgent commercial needs, call (469) 360-5805."}
+                    ? 'Responderemos dentro de las 24 horas. Para urgencias, llame al (469) 368-5885.'
+                    : "We'll respond within 24 hours. For urgent commercial needs, call (469) 368-5885."}
                 </p>
                 <button
                   type="button"
@@ -170,7 +170,7 @@ export const Contact: React.FC = () => {
                     label={isEs ? 'Número de Teléfono *' : 'Phone Number *'}
                     name="phone"
                     type="tel"
-                    placeholder="(469) 360-5805"
+                    placeholder="(469) 368-5885"
                     required
                     value={formData.phone}
                     onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
@@ -289,8 +289,8 @@ export const Contact: React.FC = () => {
 
                 <p className="text-center text-[11px] text-slate-500 font-semibold">
                   {isEs
-                    ? 'Responderemos dentro de las 24 horas. Para urgencias, llame al (469) 360-5805.'
-                    : "We'll respond within 24 hours. For urgent needs, call (469) 360-5805."}
+                    ? 'Responderemos dentro de las 24 horas. Para urgencias, llame al (469) 368-5885.'
+                    : "We'll respond within 24 hours. For urgent needs, call (469) 368-5885."}
                 </p>
               </form>
             )}

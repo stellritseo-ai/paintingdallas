@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 import { useLanguage } from '@/context/LanguageContext';
 import {
   MapPin,
@@ -77,14 +78,13 @@ export const Projects: React.FC = () => {
 
           {/* Right Header Action Card */}
           <div className="flex flex-col sm:flex-row lg:flex-col items-stretch sm:items-start lg:items-end gap-3 shrink-0 w-full sm:w-auto">
-            <button
-              type="button"
-              onClick={openEstimateModal}
+            <Link
+              href="/projects"
               className="inline-flex w-full sm:w-auto items-center justify-center gap-2.5 bg-[#0F172A] hover:bg-[#1E293B] text-white text-xs sm:text-[13px] font-black uppercase tracking-widest rounded-full px-7 py-4 transition-all duration-300 shadow-md hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
             >
-              <span>{isEs ? 'Solicitar Presupuesto' : 'Request Commercial Proposal'}</span>
+              <span>{isEs ? 'Ver Todos Los Proyectos' : 'View All Projects & Case Studies'}</span>
               <ArrowRight className="size-4 text-[#EF3340]" />
-            </button>
+            </Link>
             <div className="inline-flex items-center justify-center sm:justify-start gap-2 text-[10px] min-[380px]:text-[11px] font-bold text-slate-500 bg-white/80 border border-slate-200/80 rounded-full px-3.5 py-1.5 shadow-2xs">
               <ShieldCheck className="size-3.5 text-emerald-600 shrink-0" />
               <span className="truncate">{isEs ? 'Personal Certificado OSHA 30 • Turnos Nocturnos' : 'OSHA 30 Certified • Night & Weekend Scheduling'}</span>
@@ -203,21 +203,20 @@ export const Projects: React.FC = () => {
 
             {/* CTA Button Block */}
             <div className="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col items-stretch lg:items-end justify-center gap-3 lg:border-l lg:border-slate-100 lg:pl-8">
-              <button
-                type="button"
-                onClick={openEstimateModal}
+              <Link
+                href="/free-estimate"
                 className="inline-flex items-center justify-center gap-2 bg-[#EF3340] hover:bg-[#D8222F] text-white rounded-full px-7 py-3.5 text-xs sm:text-[13px] font-black uppercase tracking-wider shadow-[0_8px_25px_rgba(239,51,64,0.3)] transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
               >
                 <span>{isEs ? 'Comenzar Proyecto Comercial' : 'Commission Project Estimate'}</span>
                 <ArrowRight className="size-4" />
-              </button>
+              </Link>
 
               <a
-                href="tel:4693605805"
+                href="tel:4693685885"
                 className="inline-flex items-center justify-center gap-2 text-slate-600 hover:text-[#0F172A] text-xs font-bold transition-colors py-1 cursor-pointer"
               >
                 <Phone className="size-3.5 text-[#EF3340]" />
-                <span>{isEs ? 'Línea Comercial: (469) 360-5805' : 'Commercial Desk: (469) 360-5805'}</span>
+                <span>{isEs ? 'Línea Comercial: (469) 368-5885' : 'Commercial Desk: (469) 368-5885'}</span>
               </a>
             </div>
           </div>

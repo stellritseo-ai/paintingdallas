@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useRef } from 'react';
+import Link from 'next/link';
 import { useLanguage } from '@/context/LanguageContext';
 import {
   ArrowRight,
@@ -302,32 +303,31 @@ export const About: React.FC = () => {
 
             {/* Action Buttons Suite */}
             <div className="mt-6 flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center gap-2.5 sm:gap-3 w-full min-w-0 max-w-full">
-              <button
-                type="button"
-                onClick={openEstimateModal}
+              <Link
+                href="/free-estimate"
                 className="w-full sm:w-auto h-11 sm:h-10 rounded-full bg-[#EF3340] hover:bg-[#D8222F] text-white px-5 sm:px-5.5 text-xs font-extrabold tracking-wide uppercase shadow-[0_4px_16px_rgba(239,51,64,0.3)] transition-all duration-200 hover:scale-[1.02] flex items-center justify-center gap-1.5 cursor-pointer"
               >
                 <CalendarDays className="size-3.5" />
                 <span>{t.about.cta}</span>
                 <ArrowUpRight className="size-3.5" />
-              </button>
+              </Link>
 
-              <a
-                href="#services"
-                className="w-full sm:w-auto h-11 sm:h-10 rounded-full border border-black/15 bg-white hover:bg-slate-50 text-[#0F172A] px-4.5 sm:px-5 text-xs font-extrabold tracking-wide uppercase shadow-xs transition-all duration-200 flex items-center justify-center gap-1.5 hover:border-black/30"
+              <Link
+                href="/about"
+                className="w-full sm:w-auto h-11 sm:h-10 rounded-full border border-black/15 bg-white hover:bg-slate-50 text-[#0F172A] px-4.5 sm:px-5 text-xs font-extrabold tracking-wide uppercase shadow-xs transition-all duration-200 flex items-center justify-center gap-1.5 hover:border-black/30 cursor-pointer"
               >
-                <span>{isEs ? 'Explorar Servicios' : 'Explore Commercial Services'}</span>
+                <span>{isEs ? 'Conocer Más Sobre Nosotros' : 'About Our Company'}</span>
                 <ArrowRight className="size-3.5" />
-              </a>
+              </Link>
 
               <a
-                href="tel:4693605805"
+                href="tel:4693685885"
                 className="w-full sm:w-auto h-11 sm:h-10 flex items-center justify-center gap-2 rounded-full border border-black/10 bg-white/85 px-3.5 text-xs font-bold text-[#0F172A] shadow-xs hover:border-[#EF3340]/40 hover:text-[#EF3340] transition-colors"
               >
                 <span className="flex size-4.5 items-center justify-center rounded-full bg-[#EF3340]/15 text-[#EF3340]">
                   <Phone className="size-2.5" />
                 </span>
-                <span className="font-bold tracking-tight">(469) 360-5805</span>
+                <span className="font-bold tracking-tight">(469) 368-5885</span>
               </a>
             </div>
           </div>

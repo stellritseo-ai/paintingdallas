@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 import { useLanguage } from '@/context/LanguageContext';
 import { ServiceItem } from '@/data/translations';
 import {
@@ -26,19 +27,30 @@ const serviceIcons: Record<string, React.ElementType> = {
   specialty: Zap,
 };
 
+const serviceRoutes: Record<string, string> = {
+  interior: '/commercial-interior-painting',
+  exterior: '/commercial-exterior-painting',
+  building: '/commercial-building-painting',
+  industrial: '/industrial-painting',
+  facility: '/property-facility-painting',
+  restoration: '/commercial-painting-restoration',
+  surface_prep: '/pressure-washing-surface-preparation',
+  specialty: '/specialty-coatings',
+};
+
 interface CardContentProps {
   service: ServiceItem;
-  onOpenModal: (service: ServiceItem) => void;
   isEs: boolean;
 }
 
-function CardContent({ service, onOpenModal, isEs }: CardContentProps) {
+function CardContent({ service, isEs }: CardContentProps) {
   const Icon = serviceIcons[service.id] || Building2;
+  const href = serviceRoutes[service.id] || '/commercial-interior-painting';
 
   return (
-    <div
-      onClick={() => onOpenModal(service)}
-      className="relative size-full overflow-hidden"
+    <Link
+      href={href}
+      className="relative size-full block overflow-hidden cursor-pointer"
     >
       {/* Background Cover Image */}
       <img
@@ -87,7 +99,7 @@ function CardContent({ service, onOpenModal, isEs }: CardContentProps) {
           </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 }
 
@@ -158,14 +170,13 @@ export const Services: React.FC = () => {
 
             {/* CTA Button */}
             <div className="mt-7">
-              <button
-                type="button"
-                onClick={openEstimateModal}
+              <Link
+                href="/free-estimate"
                 className="inline-flex w-full sm:w-auto items-center justify-center gap-2 bg-[#EF3340] hover:bg-[#D8222F] text-white rounded-full px-7 py-3.5 text-xs sm:text-[13px] font-black uppercase tracking-wider shadow-[0_10px_25px_-5px_rgba(239,51,64,0.35)] transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
               >
                 <span>{isEs ? 'Solicitar Cotización Comercial' : 'Request Commercial Quote'}</span>
                 <ArrowRight className="size-4" />
-              </button>
+              </Link>
             </div>
           </div>
 
@@ -178,7 +189,6 @@ export const Services: React.FC = () => {
               >
                 <CardContent
                   service={service}
-                  onOpenModal={openServiceModal}
                   isEs={isEs}
                 />
               </div>
@@ -212,7 +222,6 @@ export const Services: React.FC = () => {
                   <div className="group relative rounded-xl overflow-hidden bg-neutral-950 h-[190px] sm:h-[230px] lg:h-[260px] cursor-pointer shadow-md hover:shadow-[0_12px_32px_rgba(0,0,0,0.2)] transition-shadow duration-500">
                     <CardContent
                       service={service}
-                      onOpenModal={openServiceModal}
                       isEs={isEs}
                     />
                   </div>
