@@ -131,11 +131,11 @@ export const FAQ: React.FC = () => {
                     DIRECT ESTIMATING HOTLINE
                   </span>
                   <a
-                    href="tel:4693685885"
+                    href="tel:4693605805"
                     className="text-xl sm:text-2xl font-mono font-black text-white hover:text-[#EF3340] transition-colors flex items-center gap-2"
                   >
                     <Phone className="size-5 text-[#EF3340]" />
-                    <span>(469) 368-5885</span>
+                    <span>(469) 360-5805</span>
                   </a>
                   <div className="text-[11px] text-slate-400 flex items-center gap-1.5 pt-1">
                     <Clock className="size-3 text-emerald-400" />

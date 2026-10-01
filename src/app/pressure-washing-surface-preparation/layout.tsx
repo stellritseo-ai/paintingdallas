@@ -41,8 +41,8 @@ const surfacePrepJsonLd = {
       provider: {
         '@type': 'ProfessionalService',
         name: 'Painting Dallas',
-        telephone: '+1-469-368-5885',
-        email: 'info@paintingdallas.com',
+        telephone: '+1-469-360-5805',
+        email: 'support@paintingdallas.com',
         url: 'https://paintingdallas.com',
         address: {
           '@type': 'PostalAddress',

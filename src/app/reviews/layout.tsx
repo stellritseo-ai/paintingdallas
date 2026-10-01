@@ -38,8 +38,8 @@ const reviewsJsonLd = {
     description:
       'Premier commercial painting contractor providing trusted interior and exterior painting, industrial coatings, and restoration across Dallas-Fort Worth.',
     url: 'https://paintingdallas.com',
-    telephone: '+1-469-368-5885',
-    email: 'info@paintingdallas.com',
+    telephone: '+1-469-360-5805',
+    email: 'support@paintingdallas.com',
     priceRange: '$$$',
     address: {
       '@type': 'PostalAddress',

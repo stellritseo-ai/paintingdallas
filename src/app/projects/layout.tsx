@@ -50,7 +50,7 @@ const projectsJsonLd = {
       '@id': 'https://paintingdallas.com/#organization',
       name: 'Painting Dallas',
       url: 'https://paintingdallas.com',
-      telephone: '+1-469-368-5885',
+      telephone: '+1-469-360-5805',
       priceRange: '$$$',
       areaServed: {
         '@type': 'AdministrativeArea',

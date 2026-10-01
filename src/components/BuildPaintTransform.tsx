@@ -124,7 +124,7 @@ export const BuildPaintTransform: React.FC = () => {
               <div className="absolute -inset-0.5 bg-gradient-to-r from-red-600 to-orange-500 rounded-2xl blur opacity-35 group-hover:opacity-75 transition duration-500 animate-pulse" />
 
               <a
-                href="tel:4693685885"
+                href="tel:4693605805"
                 className="relative flex items-center justify-between gap-3 sm:gap-4 rounded-2xl bg-gradient-to-r from-red-600 to-[#d62828] p-3.5 sm:p-5 font-semibold text-white shadow-2xl hover:brightness-110 transition-all duration-300 w-full"
               >
                 <div className="flex items-center gap-3 sm:gap-3.5 min-w-0">
@@ -136,7 +136,7 @@ export const BuildPaintTransform: React.FC = () => {
                       {isEs ? 'Línea Directa Comercial' : 'Commercial Estimate Hotline'}
                     </span>
                     <span className="block text-lg min-[360px]:text-xl sm:text-2xl font-black leading-tight tracking-tight mt-0.5 font-mono truncate">
-                      (469) 368-5885
+                      (469) 360-5805
                     </span>
                   </div>
                 </div>

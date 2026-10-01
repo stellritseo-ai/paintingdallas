@@ -68,8 +68,8 @@ const jsonLd = {
   description:
     'Specialized commercial painting and restoration contractor serving corporate, industrial, retail, and institutional properties throughout a 50-mile radius of Dallas, TX.',
   url: 'https://paintingdallas.com',
-  telephone: '+1-469-368-5885',
-  email: 'info@paintingdallas.com',
+  telephone: '+1-469-360-5805',
+  email: 'support@paintingdallas.com',
   priceRange: '$$$',
   address: {
     '@type': 'PostalAddress',

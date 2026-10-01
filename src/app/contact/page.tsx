@@ -293,11 +293,11 @@ export default function ContactPage() {
 
               {/* Direct Call CTA */}
               <a
-                href="tel:4693685885"
+                href="tel:4693605805"
                 className="inline-flex items-center gap-2.5 rounded-full bg-white/15 hover:bg-white/25 border border-white/25 text-white px-6 py-4 text-xs sm:text-sm font-bold uppercase tracking-wider backdrop-blur-md transition-all duration-200 hover:border-[#EF3340]/60 hover:text-white shadow-md"
               >
                 <Phone className="size-4 text-[#EF3340]" />
-                <span>{isEs ? 'Llamar (469) 368-5885' : 'Call (469) 368-5885'}</span>
+                <span>{isEs ? 'Llamar (469) 360-5805' : 'Call (469) 360-5805'}</span>
               </a>
             </div>
 
@@ -387,10 +387,10 @@ export default function ContactPage() {
                       {isEs ? '📞 Línea Telefónica Directa' : '📞 Direct Phone'}
                     </h3>
                     <a
-                      href="tel:4693685885"
+                      href="tel:4693605805"
                       className="block text-lg font-black text-[#062F57] hover:text-[#EF3340] transition-colors mt-0.5"
                     >
-                      (469) 368-5885
+                      (469) 360-5805
                     </a>
                     <p className="text-xs text-slate-500 font-medium mt-1">
                       {isEs
@@ -410,10 +410,10 @@ export default function ContactPage() {
                       {isEs ? '✉️ Correo Electrónico' : '✉️ Email Proposal Desk'}
                     </h3>
                     <a
-                      href="mailto:info@paintingdallas.com"
+                      href="mailto:support@paintingdallas.com"
                       className="block text-base font-black text-[#062F57] hover:text-[#EF3340] transition-colors mt-0.5 truncate"
                     >
-                      info@paintingdallas.com
+                      support@paintingdallas.com
                     </a>
                     <p className="text-xs text-slate-500 font-medium mt-1">
                       {isEs
@@ -538,11 +538,11 @@ export default function ContactPage() {
                     </p>
                     <div className="inline-flex flex-col sm:flex-row items-center gap-3">
                       <a
-                        href="tel:4693685885"
+                        href="tel:4693605805"
                         className="inline-flex items-center gap-2 rounded-full bg-[#062F57] text-white px-6 py-3 text-xs font-bold uppercase tracking-wider shadow-md hover:bg-[#0B477D] transition-colors"
                       >
                         <Phone className="size-3.5 text-[#EF3340]" />
-                        <span>{isEs ? 'Llamada Directa (469) 368-5885' : 'Direct Call: (469) 368-5885'}</span>
+                        <span>{isEs ? 'Llamada Directa (469) 360-5805' : 'Direct Call: (469) 360-5805'}</span>
                       </a>
                       <button
                         type="button"
@@ -969,19 +969,19 @@ export default function ContactPage() {
             </p>
             <div className="mt-3 flex items-center justify-center gap-3">
               <a
-                href="tel:4693685885"
+                href="tel:4693605805"
                 className="inline-flex items-center gap-1.5 text-xs font-black uppercase tracking-wider text-[#EF3340] hover:text-[#D8222F]"
               >
                 <Phone className="size-3.5" />
-                <span>(469) 368-5885</span>
+                <span>(469) 360-5805</span>
               </a>
               <span className="text-slate-300">•</span>
               <a
-                href="mailto:info@paintingdallas.com"
+                href="mailto:support@paintingdallas.com"
                 className="inline-flex items-center gap-1.5 text-xs font-black uppercase tracking-wider text-[#062F57] hover:text-[#0B477D]"
               >
                 <Mail className="size-3.5" />
-                <span>info@paintingdallas.com</span>
+                <span>support@paintingdallas.com</span>
               </a>
             </div>
           </div>
@@ -1028,11 +1028,11 @@ export default function ContactPage() {
               {/* Direct Urgent Callout CTA */}
               <div className="shrink-0 flex flex-col items-center">
                 <a
-                  href="tel:4693685885"
+                  href="tel:4693605805"
                   className="inline-flex items-center gap-3 rounded-full bg-[#EF3340] hover:bg-[#D8222F] text-white px-8 py-4 text-sm font-black uppercase tracking-wider shadow-[0_10px_25px_-5px_rgba(239,51,64,0.6)] transition-all hover:scale-105 active:scale-95"
                 >
                   <Phone className="size-5" />
-                  <span>(469) 368-5885</span>
+                  <span>(469) 360-5805</span>
                 </a>
                 <span className="text-[11px] text-slate-300 font-bold uppercase tracking-wider mt-2">
                   {isEs ? 'Atención Inmediata 24/7' : '24/7 Live Commercial Dispatch'}

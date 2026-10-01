@@ -38,8 +38,8 @@ const contactJsonLd = {
     description:
       'Premier commercial painting and restoration contractor serving commercial properties, general contractors, and facility managers across the Dallas-Fort Worth Metroplex.',
     url: 'https://paintingdallas.com/contact',
-    telephone: '+1-469-368-5885',
-    email: 'info@paintingdallas.com',
+    telephone: '+1-469-360-5805',
+    email: 'support@paintingdallas.com',
     priceRange: '$$$',
     address: {
       '@type': 'PostalAddress',
@@ -69,7 +69,7 @@ const contactJsonLd = {
     ],
     contactPoint: {
       '@type': 'ContactPoint',
-      telephone: '+1-469-368-5885',
+      telephone: '+1-469-360-5805',
       contactType: 'customer service',
       areaServed: 'Dallas-Fort Worth Metroplex',
       availableLanguage: ['English', 'Spanish'],

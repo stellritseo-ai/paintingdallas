@@ -536,11 +536,11 @@ export const Navbar: React.FC = () => {
 
                           <div className="flex items-center gap-3">
                             <a
-                              href="tel:4693685885"
+                              href="tel:4693605805"
                               className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white border border-slate-200 text-[#062F57] hover:text-[#EF3340] hover:border-[#EF3340]/30 transition-all text-xs font-bold shadow-2xs"
                             >
                               <Phone className="size-3 text-[#EF3340]" />
-                              <span>(469) 368-5885</span>
+                              <span>(469) 360-5805</span>
                             </a>
 
                             <a
@@ -581,13 +581,13 @@ export const Navbar: React.FC = () => {
 
           {/* Phone Pill */}
           <a
-            href="tel:4693685885"
+            href="tel:4693605805"
             className="group inline-flex items-center gap-2 rounded-full border border-black/10 bg-white px-3.5 py-2 text-xs font-bold text-[#0F172A] shadow-xs transition-all duration-200 hover:border-[#EF3340]/40 hover:text-[#EF3340] hover:-translate-y-0.5"
           >
             <span className="flex size-5 items-center justify-center rounded-full bg-[#EF3340]/15 text-[#EF3340] transition-transform duration-200 group-hover:scale-110">
               <Phone className="size-2.5" />
             </span>
-            <span className="font-bold whitespace-nowrap">(469) 368-5885</span>
+            <span className="font-bold whitespace-nowrap">(469) 360-5805</span>
           </a>
 
           {/* Primary Action Button */}
@@ -605,11 +605,11 @@ export const Navbar: React.FC = () => {
         <div className="flex xl:hidden items-center gap-2 shrink-0">
           {/* Tablet Quick Call Button */}
           <a
-            href="tel:4693685885"
+            href="tel:4693605805"
             className="hidden sm:inline-flex items-center gap-1.5 rounded-full border border-black/10 bg-white px-3 py-1.5 text-xs font-bold text-[#0F172A] shadow-xs"
           >
             <Phone className="size-3 text-[#EF3340]" />
-            <span>(469) 368-5885</span>
+            <span>(469) 360-5805</span>
           </a>
 
           {/* Language Toggle Button */}
@@ -859,11 +859,11 @@ export const Navbar: React.FC = () => {
             {/* Bottom Sticky Action Bar */}
             <div className="p-4 sm:p-5 border-t border-slate-100 bg-slate-50/90 space-y-2.5 shrink-0 pb-[max(1.25rem,env(safe-area-inset-bottom))]">
               <a
-                href="tel:4693685885"
+                href="tel:4693605805"
                 className="flex items-center justify-center gap-2 w-full py-3 bg-[#062F57] hover:bg-[#0B477D] text-white text-xs font-bold uppercase tracking-wider rounded-full shadow-sm transition-colors"
               >
                 <Phone className="size-3.5 text-[#EF3340]" />
-                <span>(469) 368-5885</span>
+                <span>(469) 360-5805</span>
               </a>
 
               <a

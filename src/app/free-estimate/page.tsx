@@ -289,8 +289,8 @@ export default function FreeEstimatePage() {
     {
       q: isEs ? '¿Ofrecen estimaciones de emergencia o fuera de horario?' : 'Do you offer emergency or after-hours estimates?',
       a: isEs
-        ? 'Sí. Para necesidades urgentes de restauración por daños o inspecciones críticas, ofrecemos soporte de emergencia 24/7. Llame al (469) 368-5885.'
-        : 'Yes. For urgent restoration needs, we offer 24/7 emergency support. Call (469) 368-5885 and follow the prompts.',
+        ? 'Sí. Para necesidades urgentes de restauración por daños o inspecciones críticas, ofrecemos soporte de emergencia 24/7. Llame al (469) 360-5805.'
+        : 'Yes. For urgent restoration needs, we offer 24/7 emergency support. Call (469) 360-5805 and follow the prompts.',
     },
     {
       q: isEs ? '¿Qué tipos de propiedades comerciales pintan?' : 'What types of commercial properties do you paint?',
@@ -432,11 +432,11 @@ export default function FreeEstimatePage() {
 
               {/* Direct Call CTA */}
               <a
-                href="tel:4693685885"
+                href="tel:4693605805"
                 className="inline-flex items-center gap-2.5 rounded-full bg-white/15 hover:bg-white/25 border border-white/25 text-white px-6 py-4 text-xs sm:text-sm font-bold uppercase tracking-wider backdrop-blur-md transition-all duration-200 hover:border-[#EF3340]/60 hover:text-white shadow-md"
               >
                 <Phone className="size-4 text-[#EF3340]" />
-                <span>{isEs ? 'Llamar (469) 368-5885' : 'Call (469) 368-5885'}</span>
+                <span>{isEs ? 'Llamar (469) 360-5805' : 'Call (469) 360-5805'}</span>
               </a>
             </div>
 
@@ -538,11 +538,11 @@ export default function FreeEstimatePage() {
               </div>
 
               <a
-                href="tel:4693685885"
+                href="tel:4693605805"
                 className="inline-flex items-center justify-center gap-2 rounded-full bg-[#EF3340] hover:bg-[#D8222F] text-white py-3 px-5 text-xs font-black uppercase tracking-wider shadow-md transition-all"
               >
                 <Phone className="size-3.5" />
-                <span>(469) 368-5885</span>
+                <span>(469) 360-5805</span>
               </a>
             </div>
           </div>
@@ -589,11 +589,11 @@ export default function FreeEstimatePage() {
                   </p>
                   <div className="inline-flex flex-col sm:flex-row items-center gap-4">
                     <a
-                      href="tel:4693685885"
+                      href="tel:4693605805"
                       className="inline-flex items-center gap-2.5 rounded-full bg-[#062F57] text-white px-7 py-3.5 text-xs font-bold uppercase tracking-wider shadow-md hover:bg-[#0B477D] transition-colors"
                     >
                       <Phone className="size-4 text-[#EF3340]" />
-                      <span>(469) 368-5885</span>
+                      <span>(469) 360-5805</span>
                     </a>
                     <button
                       type="button"
@@ -1172,24 +1172,24 @@ export default function FreeEstimatePage() {
           <div className="mt-10 p-6 rounded-2xl bg-slate-50 border border-slate-200 text-center max-w-2xl mx-auto">
             <p className="text-xs sm:text-sm font-semibold text-slate-700">
               {isEs
-                ? '¿No está seguro si cubrimos su área? Llámenos al (469) 368-5885; es muy probable que sí lo hagamos.'
-                : 'Not sure if we cover your area? Give us a call at (469) 368-5885—we likely do.'}
+                ? '¿No está seguro si cubrimos su área? Llámenos al (469) 360-5805; es muy probable que sí lo hagamos.'
+                : 'Not sure if we cover your area? Give us a call at (469) 360-5805—we likely do.'}
             </p>
             <div className="mt-3 flex items-center justify-center gap-3">
               <a
-                href="tel:4693685885"
+                href="tel:4693605805"
                 className="inline-flex items-center gap-1.5 text-xs font-black uppercase tracking-wider text-[#EF3340] hover:text-[#D8222F]"
               >
                 <Phone className="size-3.5" />
-                <span>(469) 368-5885</span>
+                <span>(469) 360-5805</span>
               </a>
               <span className="text-slate-300">•</span>
               <a
-                href="mailto:info@paintingdallas.com"
+                href="mailto:support@paintingdallas.com"
                 className="inline-flex items-center gap-1.5 text-xs font-black uppercase tracking-wider text-[#062F57] hover:text-[#0B477D]"
               >
                 <Mail className="size-3.5" />
-                <span>info@paintingdallas.com</span>
+                <span>support@paintingdallas.com</span>
               </a>
             </div>
           </div>
@@ -1226,10 +1226,10 @@ export default function FreeEstimatePage() {
                   {isEs ? '📞 Teléfono Directo' : '📞 Phone'}
                 </h3>
                 <a
-                  href="tel:4693685885"
+                  href="tel:4693605805"
                   className="block text-lg font-black text-[#062F57] hover:text-[#EF3340] transition-colors mt-1"
                 >
-                  (469) 368-5885
+                  (469) 360-5805
                 </a>
               </div>
               <p className="text-xs text-slate-500 mt-3 pt-3 border-t border-slate-100">
@@ -1247,10 +1247,10 @@ export default function FreeEstimatePage() {
                   {isEs ? '✉️ Correo Electrónico' : '✉️ Email Desk'}
                 </h3>
                 <a
-                  href="mailto:info@paintingdallas.com"
+                  href="mailto:support@paintingdallas.com"
                   className="block text-sm sm:text-base font-black text-[#062F57] hover:text-[#EF3340] transition-colors mt-1 truncate"
                 >
-                  info@paintingdallas.com
+                  support@paintingdallas.com
                 </a>
               </div>
               <p className="text-xs text-slate-500 mt-3 pt-3 border-t border-slate-100">
@@ -1398,11 +1398,11 @@ export default function FreeEstimatePage() {
               </button>
 
               <a
-                href="tel:4693685885"
+                href="tel:4693605805"
                 className="inline-flex items-center gap-2.5 rounded-full bg-white/15 hover:bg-white/25 border border-white/20 text-white px-7 py-4 text-xs sm:text-sm font-bold uppercase tracking-wider backdrop-blur-md transition-all"
               >
                 <Phone className="size-4 text-[#EF3340]" />
-                <span>{isEs ? 'Llamar (469) 368-5885' : 'Call (469) 368-5885'}</span>
+                <span>{isEs ? 'Llamar (469) 360-5805' : 'Call (469) 360-5805'}</span>
               </a>
             </div>
 

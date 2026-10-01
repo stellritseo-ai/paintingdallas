@@ -212,11 +212,11 @@ export const Projects: React.FC = () => {
               </Link>
 
               <a
-                href="tel:4693685885"
+                href="tel:4693605805"
                 className="inline-flex items-center justify-center gap-2 text-slate-600 hover:text-[#0F172A] text-xs font-bold transition-colors py-1 cursor-pointer"
               >
                 <Phone className="size-3.5 text-[#EF3340]" />
-                <span>{isEs ? 'Línea Comercial: (469) 368-5885' : 'Commercial Desk: (469) 368-5885'}</span>
+                <span>{isEs ? 'Línea Comercial: (469) 360-5805' : 'Commercial Desk: (469) 360-5805'}</span>
               </a>
             </div>
           </div>

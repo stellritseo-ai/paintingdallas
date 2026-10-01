@@ -40,8 +40,8 @@ const facilityJsonLd = {
       provider: {
         '@type': 'ProfessionalService',
         name: 'Painting Dallas',
-        telephone: '+1-469-368-5885',
-        email: 'info@paintingdallas.com',
+        telephone: '+1-469-360-5805',
+        email: 'support@paintingdallas.com',
         url: 'https://paintingdallas.com',
         address: {
           '@type': 'PostalAddress',
@@ -189,7 +189,7 @@ const facilityJsonLd = {
           name: 'Do you offer emergency services?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'Yes. We offer 24/7 emergency response for urgent painting and restoration needs. Call (469) 368-5885 and follow the prompts.',
+            text: 'Yes. We offer 24/7 emergency response for urgent painting and restoration needs. Call (469) 360-5805 and follow the prompts.',
           },
         },
         {

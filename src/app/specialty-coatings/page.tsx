@@ -484,11 +484,11 @@ export default function SpecialtyCoatingsPage() {
               </Link>
 
               <a
-                href="tel:4693685885"
+                href="tel:4693605805"
                 className="inline-flex items-center gap-2.5 rounded-full bg-white/15 hover:bg-white/25 border border-white/25 text-white px-6 py-4 text-xs sm:text-sm font-bold uppercase tracking-wider backdrop-blur-md transition-all duration-200 hover:border-[#EF3340]/60 hover:text-white shadow-md"
               >
                 <Phone className="size-4 text-[#EF3340]" />
-                <span>{isEs ? 'Llamar (469) 368-5885' : 'Call (469) 368-5885'}</span>
+                <span>{isEs ? 'Llamar (469) 360-5805' : 'Call (469) 360-5805'}</span>
               </a>
             </div>
 
@@ -1016,15 +1016,15 @@ export default function SpecialtyCoatingsPage() {
             <span className="text-xs sm:text-sm font-semibold text-slate-700">
               Not sure if we cover your area? Give us a call at{' '}
               <a
-                href="tel:4693685885"
+                href="tel:4693605805"
                 className="font-bold text-[#062F57] hover:text-[#EF3340] underline transition-colors"
               >
-                (469) 368-5885
+                (469) 360-5805
               </a>
               —we likely do.
             </span>
             <a
-              href="tel:4693685885"
+              href="tel:4693605805"
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#062F57] hover:bg-[#0A2540] text-white text-xs font-bold uppercase tracking-wider transition-all shrink-0"
             >
               <Phone className="size-3.5 text-[#EF3340]" />
@@ -1115,11 +1115,11 @@ export default function SpecialtyCoatingsPage() {
               <ArrowRight className="size-4" />
             </Link>
             <a
-              href="tel:4693685885"
+              href="tel:4693605805"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-white/10 hover:bg-white/20 border border-white/25 text-white font-bold text-sm tracking-wide backdrop-blur-md transition-all hover:scale-[1.02] active:scale-[0.99]"
             >
               <Phone className="size-4 text-[#EF3340]" />
-              <span>Call (469) 368-5885</span>
+              <span>Call (469) 360-5805</span>
             </a>
           </div>
 

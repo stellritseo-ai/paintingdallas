@@ -407,11 +407,11 @@ export default function AboutPage() {
 
               {/* Direct Call CTA */}
               <a
-                href="tel:4693685885"
+                href="tel:4693605805"
                 className="inline-flex items-center gap-2.5 rounded-full bg-white/15 hover:bg-white/25 border border-white/25 text-white px-6 py-4 text-xs sm:text-sm font-bold uppercase tracking-wider backdrop-blur-md transition-all duration-200 hover:border-[#EF3340]/60 hover:text-white shadow-md"
               >
                 <Phone className="size-4 text-[#EF3340]" />
-                <span>{isEs ? 'Llamar (469) 368-5885' : 'Call (469) 368-5885'}</span>
+                <span>{isEs ? 'Llamar (469) 360-5805' : 'Call (469) 360-5805'}</span>
               </a>
             </div>
 
@@ -1023,10 +1023,10 @@ export default function AboutPage() {
                         {isEs ? 'Teléfono Directo' : 'Phone'}
                       </div>
                       <a
-                        href="tel:4693685885"
+                        href="tel:4693605805"
                         className="font-bold text-white text-base mt-0.5 hover:text-[#EF3340] transition-colors block font-mono"
                       >
-                        (469) 368-5885
+                        (469) 360-5805
                       </a>
                     </div>
                   </div>
@@ -1041,10 +1041,10 @@ export default function AboutPage() {
                         {isEs ? 'Correo Electrónico' : 'Email'}
                       </div>
                       <a
-                        href="mailto:info@paintingdallas.com"
+                        href="mailto:support@paintingdallas.com"
                         className="font-bold text-white text-sm mt-0.5 hover:text-[#EF3340] transition-colors block"
                       >
-                        info@paintingdallas.com
+                        support@paintingdallas.com
                       </a>
                     </div>
                   </div>

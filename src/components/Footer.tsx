@@ -138,7 +138,7 @@ export const Footer: React.FC = () => {
 
             {/* Phone CTA Banner */}
             <a
-              href="tel:4693685885"
+              href="tel:4693605805"
               className="flex items-center gap-3 w-full bg-gradient-to-r from-[#062F57] to-[#0B477D] border border-white/20 rounded-2xl px-4 py-3 mb-4 shadow-lg hover:border-[#EF3340]/60 transition-colors"
             >
               <div className="h-9 w-9 rounded-xl bg-white/10 flex items-center justify-center shrink-0">
@@ -149,7 +149,7 @@ export const Footer: React.FC = () => {
                   {isEs ? 'Línea de Despacho Comercial' : 'Commercial Dispatch Line'}
                 </span>
                 <span className="font-black text-white text-[15px] tracking-tight leading-tight font-mono">
-                  (469) 368-5885
+                  (469) 360-5805
                 </span>
               </div>
             </a>
@@ -252,15 +252,15 @@ export const Footer: React.FC = () => {
           <MobileCollapsibleSection title={isEs ? 'Contáctenos' : 'Contact Us'}>
             <ul className="space-y-3 text-xs">
               <li>
-                <a href="tel:4693685885" className="flex items-center gap-2.5 text-slate-300">
+                <a href="tel:4693605805" className="flex items-center gap-2.5 text-slate-300">
                   <Phone className="h-3.5 w-3.5 text-[#EF3340] shrink-0" />
-                  <span className="font-mono">(469) 368-5885</span>
+                  <span className="font-mono">(469) 360-5805</span>
                 </a>
               </li>
               <li>
-                <a href="mailto:info@paintingdallas.com" className="flex items-center gap-2.5 text-slate-300 break-all">
+                <a href="mailto:support@paintingdallas.com" className="flex items-center gap-2.5 text-slate-300 break-all">
                   <Mail className="h-3.5 w-3.5 text-[#EF3340] shrink-0" />
-                  <span>info@paintingdallas.com</span>
+                  <span>support@paintingdallas.com</span>
                 </a>
               </li>
               <li>
@@ -427,7 +427,7 @@ export const Footer: React.FC = () => {
               <ul className="space-y-3.5 text-sm">
                 <li>
                   <a
-                    href="tel:4693685885"
+                    href="tel:4693605805"
                     className="flex items-center gap-3 text-slate-300 hover:text-white transition-colors group"
                   >
                     <div className="h-8 w-8 rounded-lg bg-[#062F57] border border-white/20 flex items-center justify-center text-[#EF3340] group-hover:bg-[#EF3340] group-hover:text-white transition-all shrink-0">
@@ -438,14 +438,14 @@ export const Footer: React.FC = () => {
                         {isEs ? 'Teléfono' : 'Phone'}
                       </span>
                       <span className="font-semibold text-white tracking-tight text-xs font-mono">
-                        (469) 368-5885
+                        (469) 360-5805
                       </span>
                     </div>
                   </a>
                 </li>
                 <li>
                   <a
-                    href="mailto:info@paintingdallas.com"
+                    href="mailto:support@paintingdallas.com"
                     className="flex items-center gap-3 text-slate-300 hover:text-white transition-colors group"
                   >
                     <div className="h-8 w-8 rounded-lg bg-[#062F57] border border-white/20 flex items-center justify-center text-[#EF3340] group-hover:bg-[#EF3340] group-hover:text-white transition-all shrink-0">
@@ -456,7 +456,7 @@ export const Footer: React.FC = () => {
                         {isEs ? 'Correo' : 'Email'}
                       </span>
                       <span className="font-semibold text-white tracking-tight text-xs truncate font-mono">
-                        info@paintingdallas.com
+                        support@paintingdallas.com
                       </span>
                     </div>
                   </a>

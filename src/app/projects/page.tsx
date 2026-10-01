@@ -578,11 +578,11 @@ export default function ProjectsPage() {
               </button>
 
               <a
-                href="tel:4693685885"
+                href="tel:4693605805"
                 className="inline-flex items-center gap-2.5 rounded-full bg-white/10 hover:bg-white/20 text-white border border-white/30 px-6 py-4 text-xs sm:text-sm font-bold uppercase tracking-wider backdrop-blur-md transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] cursor-pointer shadow-md"
               >
                 <Phone className="size-4 text-[#EF3340]" />
-                <span>{isEs ? 'Llamar (469) 368-5885' : 'Call (469) 368-5885'}</span>
+                <span>{isEs ? 'Llamar (469) 360-5805' : 'Call (469) 360-5805'}</span>
               </a>
             </div>
 
@@ -1252,11 +1252,11 @@ export default function ProjectsPage() {
             </button>
 
             <a
-              href="tel:4693685885"
+              href="tel:4693605805"
               className="inline-flex items-center gap-2.5 rounded-full bg-white/10 hover:bg-white/20 text-white border border-white/30 px-7 py-4 text-xs sm:text-sm font-bold uppercase tracking-wider backdrop-blur-md transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
             >
               <Phone className="size-4 text-[#EF3340]" />
-              <span>{isEs ? 'Llamar al (469) 368-5885' : 'Call (469) 368-5885'}</span>
+              <span>{isEs ? 'Llamar al (469) 360-5805' : 'Call (469) 360-5805'}</span>
             </a>
           </div>
 

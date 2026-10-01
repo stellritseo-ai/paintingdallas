@@ -442,11 +442,11 @@ export default function ReviewsPage() {
 
               {/* Direct Call CTA */}
               <a
-                href="tel:4693685885"
+                href="tel:4693605805"
                 className="inline-flex items-center gap-2.5 rounded-full bg-white/15 hover:bg-white/25 border border-white/25 text-white px-6 py-4 text-xs sm:text-sm font-bold uppercase tracking-wider backdrop-blur-md transition-all duration-200 hover:border-[#EF3340]/60 hover:text-white shadow-md"
               >
                 <Phone className="size-4 text-[#EF3340]" />
-                <span>{isEs ? 'Llamar (469) 368-5885' : 'Call (469) 368-5885'}</span>
+                <span>{isEs ? 'Llamar (469) 360-5805' : 'Call (469) 360-5805'}</span>
               </a>
             </div>
 
@@ -844,7 +844,7 @@ export default function ReviewsPage() {
             {/* Direct Contact Cluster */}
             <div className="grid sm:grid-cols-3 gap-4 max-w-2xl mx-auto mb-8 text-left">
               <a
-                href="tel:4693685885"
+                href="tel:4693605805"
                 className="p-4 rounded-2xl bg-white/10 hover:bg-white/15 border border-white/15 transition-colors flex items-center gap-3"
               >
                 <div className="size-10 rounded-xl bg-[#EF3340] text-white flex items-center justify-center shrink-0">
@@ -855,13 +855,13 @@ export default function ReviewsPage() {
                     {isEs ? 'Llámenos' : 'Call Us'}
                   </div>
                   <div className="text-xs sm:text-sm font-black text-white truncate">
-                    (469) 368-5885
+                    (469) 360-5805
                   </div>
                 </div>
               </a>
 
               <a
-                href="mailto:info@paintingdallas.com"
+                href="mailto:support@paintingdallas.com"
                 className="p-4 rounded-2xl bg-white/10 hover:bg-white/15 border border-white/15 transition-colors flex items-center gap-3"
               >
                 <div className="size-10 rounded-xl bg-[#EF3340] text-white flex items-center justify-center shrink-0">
@@ -872,7 +872,7 @@ export default function ReviewsPage() {
                     {isEs ? 'Escríbanos' : 'Email Us'}
                   </div>
                   <div className="text-xs sm:text-sm font-black text-white truncate">
-                    info@paintingdallas.com
+                    support@paintingdallas.com
                   </div>
                 </div>
               </a>
@@ -964,12 +964,12 @@ export default function ReviewsPage() {
                   : 'Have questions about a specific review? Contact us directly and we’ll be happy to provide references.'}
               </p>
               <div className="mt-2 flex items-center justify-center gap-3 text-xs font-black uppercase tracking-wider text-[#062F57]">
-                <a href="tel:4693685885" className="hover:text-[#EF3340] transition-colors">
-                  (469) 368-5885
+                <a href="tel:4693605805" className="hover:text-[#EF3340] transition-colors">
+                  (469) 360-5805
                 </a>
                 <span>•</span>
-                <a href="mailto:info@paintingdallas.com" className="hover:text-[#EF3340] transition-colors">
-                  info@paintingdallas.com
+                <a href="mailto:support@paintingdallas.com" className="hover:text-[#EF3340] transition-colors">
+                  support@paintingdallas.com
                 </a>
               </div>
             </div>

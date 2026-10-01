@@ -54,7 +54,7 @@ export const translations = {
       contact: 'Contact',
       getEstimate: 'GET A FREE ESTIMATE',
       callNow: 'CALL NOW',
-      phone: '(469) 368-5885',
+      phone: '(469) 360-5805',
       commercialQuote: 'REQUEST A COMMERCIAL QUOTE',
     },
     hero: {
@@ -727,7 +727,7 @@ export const translations = {
       contact: 'Contacto',
       getEstimate: 'OBTENER PRESUPUESTO GRATIS',
       callNow: 'LLAMAR AHORA',
-      phone: '(469) 368-5885',
+      phone: '(469) 360-5805',
       commercialQuote: 'SOLICITAR COTIZACIÓN COMERCIAL',
     },
     hero: {

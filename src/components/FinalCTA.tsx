@@ -82,11 +82,11 @@ export const FinalCTA: React.FC = () => {
           </Link>
 
           <a
-            href="tel:4693685885"
+            href="tel:4693605805"
             className="w-full sm:w-auto h-12 sm:h-13 rounded-xl border border-white/20 bg-white/10 hover:bg-white/15 text-white px-7 sm:px-8 text-xs sm:text-[13px] font-black tracking-wider uppercase backdrop-blur-md transition-all duration-200 inline-flex items-center justify-center gap-2.5 group cursor-pointer"
           >
             <Phone className="size-4 text-[#EF3340] group-hover:rotate-12 transition-transform" />
-            <span>{isEs ? 'Llamar: (469) 368-5885' : 'Call (469) 368-5885'}</span>
+            <span>{isEs ? 'Llamar: (469) 360-5805' : 'Call (469) 360-5805'}</span>
           </a>
         </div>
 

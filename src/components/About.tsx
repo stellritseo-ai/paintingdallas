@@ -321,13 +321,13 @@ export const About: React.FC = () => {
               </Link>
 
               <a
-                href="tel:4693685885"
+                href="tel:4693605805"
                 className="w-full sm:w-auto h-11 sm:h-10 flex items-center justify-center gap-2 rounded-full border border-black/10 bg-white/85 px-3.5 text-xs font-bold text-[#0F172A] shadow-xs hover:border-[#EF3340]/40 hover:text-[#EF3340] transition-colors"
               >
                 <span className="flex size-4.5 items-center justify-center rounded-full bg-[#EF3340]/15 text-[#EF3340]">
                   <Phone className="size-2.5" />
                 </span>
-                <span className="font-bold tracking-tight">(469) 368-5885</span>
+                <span className="font-bold tracking-tight">(469) 360-5805</span>
               </a>
             </div>
           </div>
