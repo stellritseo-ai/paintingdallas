@@ -95,13 +95,50 @@ export default function FreeEstimatePage() {
     }
   };
 
-  const handleFormSubmit = (e: React.FormEvent) => {
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
+
+  const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    setTimeout(() => {
-      setIsSubmitting(false);
+    setErrorMessage(null);
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          source: 'Free Estimate Page (Detailed Scope)',
+          fullName: formData.fullName,
+          companyName: formData.companyName,
+          email: formData.email,
+          phone: formData.phone,
+          preferredContactMethod: formData.preferredContactMethod,
+          address: formData.projectAddress,
+          propertyType: formData.propertyType,
+          serviceNeeded: formData.serviceNeeded,
+          squareFootage: formData.projectSize,
+          projectTimeline: formData.projectTimeline,
+          message: `${formData.projectDetails ? `Scope: ${formData.projectDetails}\n` : ''}Schedule On-site: ${formData.scheduleOnSite}\nReferral: ${formData.referralSource}${selectedFiles.length > 0 ? `\nAttached Files: ${selectedFiles.join(', ')}` : ''}`,
+        }),
+      });
+
+      const data = await response.json();
+      if (!response.ok || !data.success) {
+        throw new Error(data.error || 'Failed to submit estimate request.');
+      }
+
       setFormSubmitted(true);
-    }, 750);
+    } catch (err: any) {
+      console.error('Free estimate submission error:', err);
+      setErrorMessage(
+        err?.message ||
+          (isEs
+            ? 'Error al enviar la solicitud de cotización. Por favor llame al (469) 360-5805.'
+            : 'Error submitting estimate request. Please call us directly at (469) 360-5805.')
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const scrollToForm = () => {
@@ -610,6 +647,11 @@ export default function FreeEstimatePage() {
                 </div>
               ) : (
                 <form onSubmit={handleFormSubmit} className="space-y-10">
+                  {errorMessage && (
+                    <div className="rounded-xl border border-red-200 bg-red-50 p-4 text-xs font-semibold text-red-700">
+                      {errorMessage}
+                    </div>
+                  )}
                   {/* Step Progress Indicators */}
                   <div className="grid grid-cols-3 gap-2 pb-6 border-b border-slate-100 text-center">
                     <div className="flex flex-col items-center">

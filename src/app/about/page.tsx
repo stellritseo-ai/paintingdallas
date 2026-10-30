@@ -45,6 +45,7 @@ export default function AboutPage() {
   // Form State
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -60,13 +61,42 @@ export default function AboutPage() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleFormSubmit = (e: React.FormEvent) => {
+  const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    setTimeout(() => {
-      setIsSubmitting(false);
+    setErrorMessage(null);
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          source: 'About Page Consultation Form',
+          fullName: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          propertyType: formData.projectType,
+          message: formData.details,
+        }),
+      });
+
+      const data = await response.json();
+      if (!response.ok || !data.success) {
+        throw new Error(data.error || 'Failed to submit consultation request.');
+      }
+
       setFormSubmitted(true);
-    }, 700);
+    } catch (err: any) {
+      console.error('About page submit error:', err);
+      setErrorMessage(
+        err?.message ||
+          (isEs
+            ? 'Error al enviar el formulario. Por favor contáctenos al (469) 360-5805.'
+            : 'Error submitting consultation request. Please call us directly at (469) 360-5805.')
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   // 6 Philosophy & Advantage Pillars
@@ -1115,6 +1145,11 @@ export default function AboutPage() {
                 </div>
               ) : (
                 <form onSubmit={handleFormSubmit} className="space-y-4">
+                  {errorMessage && (
+                    <div className="rounded-xl border border-red-200 bg-red-50 p-4 text-xs font-semibold text-red-700">
+                      {errorMessage}
+                    </div>
+                  )}
                   <div className="mb-2">
                     <h3 className="text-xl font-black text-[#0F172A] tracking-tight">
                       {isEs ? 'Solicite Su Presupuesto Comercial' : 'Request Your Commercial Estimate'}

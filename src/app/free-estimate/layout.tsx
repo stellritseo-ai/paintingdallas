@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   description:
     'Request a free, transparent commercial painting proposal delivered within 24 hours. No hidden fees. Serving office, industrial, healthcare, retail, and multi-family properties across DFW.',
   keywords: [
+    'Commercial Painting Estimates Dallas TX',
+    'Commercial Painting Contractors Dallas TX',
+    'Best Commercial Painters Dallas',
     'Free Commercial Painting Estimate Dallas',
     'Commercial Painting Quote DFW',
     'Commercial Painter Bid Dallas',
@@ -22,6 +25,21 @@ export const metadata: Metadata = {
     siteName: 'Painting Dallas',
     locale: 'en_US',
     type: 'website',
+    images: [
+      {
+        url: 'https://paintingdallas.com/images/hero.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Painting Dallas Free Commercial Estimate',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Request Your Free Commercial Painting Estimate | Painting Dallas',
+    description:
+      'Detailed, transparent proposal within 24 hours. 5.0 Google Rating | 180+ Commercial Projects Completed | Licensed & Insured.',
+    images: ['https://paintingdallas.com/images/hero.jpg'],
   },
   alternates: {
     canonical: 'https://paintingdallas.com/free-estimate',
@@ -31,6 +49,23 @@ export const metadata: Metadata = {
 const freeEstimateJsonLd = {
   '@context': 'https://schema.org',
   '@graph': [
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'Home',
+          item: 'https://paintingdallas.com',
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: 'Free Estimate',
+          item: 'https://paintingdallas.com/free-estimate',
+        },
+      ],
+    },
     {
       '@type': 'Service',
       name: 'Commercial Painting Free Estimate',

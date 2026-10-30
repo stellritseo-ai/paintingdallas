@@ -42,6 +42,7 @@ export default function ContactPage() {
   // Form State
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [formData, setFormData] = useState({
     fullName: '',
     companyName: '',
@@ -66,13 +67,46 @@ export default function ContactPage() {
     setFormData((prev) => ({ ...prev, preferredContactMethod: method }));
   };
 
-  const handleFormSubmit = (e: React.FormEvent) => {
+  const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    setTimeout(() => {
-      setIsSubmitting(false);
+    setErrorMessage(null);
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          source: 'Contact Page Inquiry',
+          fullName: formData.fullName,
+          companyName: formData.companyName,
+          email: formData.email,
+          phone: formData.phone,
+          address: formData.projectAddress,
+          propertyType: formData.propertyType,
+          serviceNeeded: formData.serviceNeeded,
+          message: formData.projectDetails,
+          preferredContactMethod: formData.preferredContactMethod,
+        }),
+      });
+
+      const data = await response.json();
+      if (!response.ok || !data.success) {
+        throw new Error(data.error || 'Failed to submit inquiry.');
+      }
+
       setFormSubmitted(true);
-    }, 750);
+    } catch (err: any) {
+      console.error('Contact page submit error:', err);
+      setErrorMessage(
+        err?.message ||
+          (isEs
+            ? 'Error al enviar el formulario. Por favor contáctenos al (469) 360-5805.'
+            : 'Error submitting contact form. Please call us directly at (469) 360-5805.')
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   // What Happens After You Reach Out (5-Step Roadmap)
@@ -569,6 +603,11 @@ export default function ContactPage() {
                   </div>
                 ) : (
                   <form onSubmit={handleFormSubmit} className="space-y-5">
+                    {errorMessage && (
+                      <div className="rounded-xl border border-red-200 bg-red-50 p-4 text-xs font-semibold text-red-700">
+                        {errorMessage}
+                      </div>
+                    )}
                     {/* Row 1: Full Name & Company */}
                     <div className="grid sm:grid-cols-2 gap-4">
                       <div>

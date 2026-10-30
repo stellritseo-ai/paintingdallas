@@ -23,6 +23,21 @@ export const metadata: Metadata = {
     siteName: 'Painting Dallas',
     locale: 'en_US',
     type: 'website',
+    images: [
+      {
+        url: 'https://paintingdallas.com/images/surface_prep.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Pressure Washing and Surface Preparation Dallas TX',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Pressure Washing & Surface Prep Dallas | Painting Dallas',
+    description:
+      'Commercial-grade pressure washing and technical surface preparation in Dallas-Fort Worth. Hot water up to 4,000 PSI.',
+    images: ['https://paintingdallas.com/images/surface_prep.jpg'],
   },
   alternates: {
     canonical: 'https://paintingdallas.com/pressure-washing-surface-preparation',
@@ -32,6 +47,23 @@ export const metadata: Metadata = {
 const surfacePrepJsonLd = {
   '@context': 'https://schema.org',
   '@graph': [
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'Home',
+          item: 'https://paintingdallas.com',
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: 'Pressure Washing & Surface Prep',
+          item: 'https://paintingdallas.com/pressure-washing-surface-preparation',
+        },
+      ],
+    },
     {
       '@type': 'Service',
       name: 'Commercial Pressure Washing & Surface Preparation Services',

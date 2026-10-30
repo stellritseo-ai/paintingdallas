@@ -22,6 +22,21 @@ export const metadata: Metadata = {
     siteName: 'Painting Dallas',
     locale: 'en_US',
     type: 'website',
+    images: [
+      {
+        url: 'https://paintingdallas.com/images/projects.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Commercial Painting Projects in Dallas TX',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Commercial Painting Projects & Case Studies in Dallas | Painting Dallas',
+    description:
+      'Explore 180+ completed commercial painting projects and case studies across the DFW Metroplex.',
+    images: ['https://paintingdallas.com/images/projects.jpg'],
   },
   alternates: {
     canonical: 'https://paintingdallas.com/projects',

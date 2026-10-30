@@ -19,20 +19,53 @@ export const EstimateModal: React.FC = () => {
 
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   if (!isEstimateOpen) return null;
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitting(true);
-    setTimeout(() => {
-      setSubmitting(false);
+    setErrorMessage(null);
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          source: 'Global Estimate Modal',
+          fullName: formData.name,
+          companyName: formData.company,
+          phone: formData.phone,
+          email: formData.email,
+          propertyType: formData.projectType,
+          address: formData.address,
+          message: formData.details,
+        }),
+      });
+
+      const data = await response.json();
+      if (!response.ok || !data.success) {
+        throw new Error(data.error || 'Failed to submit estimate request.');
+      }
+
       setSubmitted(true);
-    }, 800);
+    } catch (err: any) {
+      console.error('EstimateModal error:', err);
+      setErrorMessage(
+        err?.message ||
+          (language === 'es'
+            ? 'Error al enviar la solicitud. Por favor llame al (469) 360-5805.'
+            : 'Error submitting estimate. Please call us at (469) 360-5805.')
+      );
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   const handleClose = () => {
     setSubmitted(false);
+    setErrorMessage(null);
     closeEstimateModal();
   };
 
@@ -104,6 +137,11 @@ export const EstimateModal: React.FC = () => {
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-4">
+              {errorMessage && (
+                <div className="rounded-xl border border-red-200 bg-red-50 p-3 text-xs font-semibold text-red-700">
+                  {errorMessage}
+                </div>
+              )}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-[11px] font-mono font-bold uppercase tracking-wider text-slate-600 mb-1">

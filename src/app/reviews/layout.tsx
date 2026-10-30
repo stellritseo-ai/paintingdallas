@@ -22,6 +22,21 @@ export const metadata: Metadata = {
     siteName: 'Painting Dallas',
     locale: 'en_US',
     type: 'website',
+    images: [
+      {
+        url: 'https://paintingdallas.com/images/hero.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Client Reviews Painting Dallas Commercial Contractors',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Client Reviews & Testimonials | Painting Dallas',
+    description:
+      '5.0 Google Rating | 180+ Verified Commercial Facility Reviews across Dallas, Plano, and Fort Worth, TX.',
+    images: ['https://paintingdallas.com/images/hero.jpg'],
   },
   alternates: {
     canonical: 'https://paintingdallas.com/reviews',
@@ -30,10 +45,29 @@ export const metadata: Metadata = {
 
 const reviewsJsonLd = {
   '@context': 'https://schema.org',
-  '@type': 'ItemPage',
-  mainEntity: {
-    '@type': 'ProfessionalService',
-    name: 'Painting Dallas',
+  '@graph': [
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'Home',
+          item: 'https://paintingdallas.com',
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: 'Client Reviews',
+          item: 'https://paintingdallas.com/reviews',
+        },
+      ],
+    },
+    {
+      '@type': 'ItemPage',
+      mainEntity: {
+        '@type': 'ProfessionalService',
+        name: 'Painting Dallas',
     alternateName: 'Commercial Buildings Interior & Exterior Painting Services',
     description:
       'Premier commercial painting contractor providing trusted interior and exterior painting, industrial coatings, and restoration across Dallas-Fort Worth.',
@@ -161,6 +195,8 @@ const reviewsJsonLd = {
       },
     ],
   },
+},
+],
 };
 
 export default function ReviewsLayout({

@@ -9,7 +9,6 @@ import { CommercialOnly } from '@/components/CommercialOnly';
 import { BuildPaintTransform } from '@/components/BuildPaintTransform';
 import { WhyChooseUs } from '@/components/WhyChooseUs';
 import { About } from '@/components/About';
-import { MissionVisionCommitment } from '@/components/MissionVisionCommitment';
 import { Process } from '@/components/Process';
 import { Projects } from '@/components/Projects';
 import { VideoSection } from '@/components/VideoSection';
@@ -43,7 +42,7 @@ export default function HomePage() {
       <Services />
 
       {/* 6. Commercial-Only Positioning Differentiator */}
-      {/* <CommercialOnly /> */}
+      <CommercialOnly />
 
       {/* 7. Build. Paint. Transform. */}
       <BuildPaintTransform />
@@ -64,7 +63,7 @@ export default function HomePage() {
       <Testimonials />
 
       {/* 14. Accessible FAQ Accordion */}
-      {/* <FAQ /> */}
+      <FAQ />
 
       {/* 15. Service Area & Radius Visual */}
       <ServiceArea />

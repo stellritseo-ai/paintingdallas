@@ -6,6 +6,8 @@ export const metadata: Metadata = {
     'High-performance protective coatings engineered for commercial and industrial facilities in Dallas-Fort Worth. Epoxy, polyurethane, intumescent fireproofing, chemical linings, 5-year warranty.',
   keywords: [
     'Specialty Coatings Dallas',
+    'Commercial Epoxy Flooring Contractors Dallas',
+    'Industrial Coating Contractors Dallas',
     'Commercial Epoxy Floor Coatings Dallas TX',
     'Intumescent Fireproofing Dallas',
     'Chemical Resistant Tank Linings DFW',
@@ -22,6 +24,21 @@ export const metadata: Metadata = {
     siteName: 'Painting Dallas',
     locale: 'en_US',
     type: 'website',
+    images: [
+      {
+        url: 'https://paintingdallas.com/images/specialty.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Specialty Industrial Coatings Dallas TX',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Specialty Coatings Dallas | Painting Dallas',
+    description:
+      'High-performance protective coatings engineered for commercial and industrial facilities in Dallas-Fort Worth.',
+    images: ['https://paintingdallas.com/images/specialty.jpg'],
   },
   alternates: {
     canonical: 'https://paintingdallas.com/specialty-coatings',
@@ -31,6 +48,23 @@ export const metadata: Metadata = {
 const specialtyJsonLd = {
   '@context': 'https://schema.org',
   '@graph': [
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'Home',
+          item: 'https://paintingdallas.com',
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: 'Specialty Coatings',
+          item: 'https://paintingdallas.com/specialty-coatings',
+        },
+      ],
+    },
     {
       '@type': 'Service',
       name: 'Specialty & High-Performance Coatings Services',

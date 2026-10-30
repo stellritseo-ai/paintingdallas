@@ -7,6 +7,10 @@ export const metadata: Metadata = {
     'Heavy-duty coatings and protective systems for warehouses, manufacturing plants, and industrial facilities across Dallas-Fort Worth. SSPC-compliant, OSHA-certified, 5-year warranty.',
   keywords: [
     'Industrial Painting Dallas',
+    'Industrial Coating Contractors Dallas',
+    'Warehouse Painting Contractors Dallas TX',
+    'Industrial Tank & Steel Painting Dallas',
+    'Commercial Epoxy Flooring Contractors Dallas',
     'Structural Steel Painting Dallas TX',
     'Industrial Epoxy Floor Coatings DFW',
     'Warehouse Painting Contractors Dallas',
@@ -22,6 +26,21 @@ export const metadata: Metadata = {
     siteName: 'Painting Dallas',
     locale: 'en_US',
     type: 'website',
+    images: [
+      {
+        url: 'https://paintingdallas.com/images/industrial.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Industrial Painting Dallas TX',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Industrial Painting Dallas | Painting Dallas',
+    description:
+      'Heavy-duty coatings and protective systems for warehouses and industrial facilities across Dallas-Fort Worth.',
+    images: ['https://paintingdallas.com/images/industrial.jpg'],
   },
   alternates: {
     canonical: 'https://paintingdallas.com/industrial-painting',
@@ -31,6 +50,23 @@ export const metadata: Metadata = {
 const industrialJsonLd = {
   '@context': 'https://schema.org',
   '@graph': [
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'Home',
+          item: 'https://paintingdallas.com',
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: 'Industrial Painting',
+          item: 'https://paintingdallas.com/industrial-painting',
+        },
+      ],
+    },
     {
       '@type': 'Service',
       name: 'Industrial Painting & Protective Coating Services',

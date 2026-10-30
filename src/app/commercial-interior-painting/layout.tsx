@@ -7,6 +7,10 @@ export const metadata: Metadata = {
     'Professional commercial interior painting for offices, retail, healthcare, and industrial facilities across Dallas-Fort Worth. Low-VOC, 5-year warranty, zero downtime.',
   keywords: [
     'Commercial Interior Painting Dallas',
+    'Office Space Painting Contractors Dallas',
+    'Retail Store Painting Contractors Dallas',
+    'Commercial Painting Companies in Dallas TX',
+    'Best Commercial Painters Dallas',
     'Commercial Office Painters Dallas',
     'Medical Facility Painting DFW',
     'Retail Interior Painting Dallas',
@@ -22,6 +26,21 @@ export const metadata: Metadata = {
     siteName: 'Painting Dallas',
     locale: 'en_US',
     type: 'website',
+    images: [
+      {
+        url: 'https://paintingdallas.com/images/interior.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Commercial Interior Painting Dallas TX',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Commercial Interior Painting Dallas | Painting Dallas',
+    description:
+      'Transform your commercial space with precision interior painting. Low-VOC, 5-year warranty, zero operational downtime.',
+    images: ['https://paintingdallas.com/images/interior.jpg'],
   },
   alternates: {
     canonical: 'https://paintingdallas.com/commercial-interior-painting',
@@ -31,6 +50,23 @@ export const metadata: Metadata = {
 const interiorJsonLd = {
   '@context': 'https://schema.org',
   '@graph': [
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'Home',
+          item: 'https://paintingdallas.com',
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: 'Commercial Interior Painting',
+          item: 'https://paintingdallas.com/commercial-interior-painting',
+        },
+      ],
+    },
     {
       '@type': 'Service',
       name: 'Commercial Interior Painting Services',

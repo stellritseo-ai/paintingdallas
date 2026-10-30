@@ -1,6 +1,15 @@
 import React from 'react';
 import Link from 'next/link';
+import type { Metadata } from 'next';
 import { ArrowLeft, Building2 } from 'lucide-react';
+
+export const metadata: Metadata = {
+  title: 'Page Not Found | Painting Dallas',
+  robots: {
+    index: false,
+    follow: false,
+  },
+};
 
 export default function NotFound() {
   return (

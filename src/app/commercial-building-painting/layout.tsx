@@ -7,6 +7,12 @@ export const metadata: Metadata = {
     'Complete painting solutions for office towers, industrial facilities, retail centers, and multi-building campuses across Dallas-Fort Worth. High-rise certified, 5-year warranty.',
   keywords: [
     'Commercial Building Painting Dallas',
+    'High Rise Building Painters Dallas',
+    'Commercial Building Exterior Painting Dallas',
+    'Commercial Painting Companies in Dallas TX',
+    'Office Space Painting Contractors Dallas',
+    'Commercial Facade Restoration Dallas TX',
+    'Best Commercial Painters Dallas',
     'Office Tower Painting Dallas',
     'Multi-Building Campus Painting DFW',
     'Commercial Property Repainting Dallas TX',
@@ -22,6 +28,21 @@ export const metadata: Metadata = {
     siteName: 'Painting Dallas',
     locale: 'en_US',
     type: 'website',
+    images: [
+      {
+        url: 'https://paintingdallas.com/images/building.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Commercial Building Painting Dallas TX',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Commercial Building Painting Dallas | Painting Dallas',
+    description:
+      'Complete painting solutions for office towers, industrial facilities, and multi-building campuses across Dallas-Fort Worth.',
+    images: ['https://paintingdallas.com/images/building.jpg'],
   },
   alternates: {
     canonical: 'https://paintingdallas.com/commercial-building-painting',
@@ -31,6 +52,23 @@ export const metadata: Metadata = {
 const buildingJsonLd = {
   '@context': 'https://schema.org',
   '@graph': [
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'Home',
+          item: 'https://paintingdallas.com',
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: 'Commercial Building Painting',
+          item: 'https://paintingdallas.com/commercial-building-painting',
+        },
+      ],
+    },
     {
       '@type': 'Service',
       name: 'Commercial Building Painting Services',

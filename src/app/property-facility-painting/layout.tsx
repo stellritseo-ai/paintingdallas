@@ -6,6 +6,9 @@ export const metadata: Metadata = {
     'Reliable painting maintenance for property managers, facility directors, and HOA boards across Dallas-Fort Worth. Fast unit turns, common area refreshes, and 5-year workmanship warranty.',
   keywords: [
     'Property Painting Dallas',
+    'Commercial Facility Maintenance Painting DFW',
+    'Commercial Property Repainting Services Dallas',
+    'Commercial Painting Companies in Dallas TX',
     'Facility Painting Dallas TX',
     'Commercial Property Maintenance Painting',
     'Apartment Unit Turn Painting Dallas',
@@ -22,6 +25,21 @@ export const metadata: Metadata = {
     siteName: 'Painting Dallas',
     locale: 'en_US',
     type: 'website',
+    images: [
+      {
+        url: 'https://paintingdallas.com/images/facility.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Property and Facility Painting Dallas TX',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Property & Facility Painting Dallas | Painting Dallas',
+    description:
+      'Reliable painting maintenance for property managers, facility directors, and HOA boards across Dallas-Fort Worth.',
+    images: ['https://paintingdallas.com/images/facility.jpg'],
   },
   alternates: {
     canonical: 'https://paintingdallas.com/property-facility-painting',
@@ -31,6 +49,23 @@ export const metadata: Metadata = {
 const facilityJsonLd = {
   '@context': 'https://schema.org',
   '@graph': [
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'Home',
+          item: 'https://paintingdallas.com',
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: 'Property & Facility Painting',
+          item: 'https://paintingdallas.com/property-facility-painting',
+        },
+      ],
+    },
     {
       '@type': 'Service',
       name: 'Property & Facility Painting Services',

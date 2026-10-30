@@ -7,6 +7,11 @@ export const metadata: Metadata = {
     'Protect your investment and enhance curb appeal with durable, weather-resistant commercial exterior coatings across Dallas-Fort Worth. 5-year warranty, licensed & insured.',
   keywords: [
     'Commercial Exterior Painting Dallas',
+    'Commercial Building Exterior Painting Dallas',
+    'Best Commercial Painters Dallas',
+    'Commercial Facade Restoration Dallas TX',
+    'Commercial Property Repainting Services Dallas',
+    'Commercial Painting Contractors Dallas TX',
     'Commercial Building Painters Dallas',
     'DFW Exterior Painting Contractor',
     'Commercial Stucco Painting Dallas',
@@ -22,6 +27,21 @@ export const metadata: Metadata = {
     siteName: 'Painting Dallas',
     locale: 'en_US',
     type: 'website',
+    images: [
+      {
+        url: 'https://paintingdallas.com/images/exterior.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Commercial Exterior Painting Dallas TX',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Commercial Exterior Painting Dallas | Painting Dallas',
+    description:
+      'Protect your investment and enhance curb appeal with durable, weather-resistant commercial exterior coatings across Dallas-Fort Worth.',
+    images: ['https://paintingdallas.com/images/exterior.jpg'],
   },
   alternates: {
     canonical: 'https://paintingdallas.com/commercial-exterior-painting',
@@ -31,6 +51,23 @@ export const metadata: Metadata = {
 const exteriorJsonLd = {
   '@context': 'https://schema.org',
   '@graph': [
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'Home',
+          item: 'https://paintingdallas.com',
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: 'Commercial Exterior Painting',
+          item: 'https://paintingdallas.com/commercial-exterior-painting',
+        },
+      ],
+    },
     {
       '@type': 'Service',
       name: 'Commercial Exterior Painting Services',

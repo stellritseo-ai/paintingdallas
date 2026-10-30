@@ -23,6 +23,7 @@ export const Contact: React.FC = () => {
 
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   const [formData, setFormData] = useState({
     name: '',
@@ -34,13 +35,44 @@ export const Contact: React.FC = () => {
     message: '',
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitting(true);
-    setTimeout(() => {
-      setSubmitting(false);
+    setErrorMessage(null);
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          source: 'Homepage Contact Section',
+          fullName: formData.name,
+          phone: formData.phone,
+          email: formData.email,
+          address: formData.address,
+          propertyType: formData.propertyType,
+          timeframe: formData.timeframe,
+          message: formData.message,
+        }),
+      });
+
+      const data = await response.json();
+      if (!response.ok || !data.success) {
+        throw new Error(data.error || 'Failed to submit estimate request.');
+      }
+
       setSubmitted(true);
-    }, 600);
+    } catch (err: any) {
+      console.error('Submission error:', err);
+      setErrorMessage(
+        err?.message ||
+          (isEs
+            ? 'Hubo un problema al enviar su solicitud. Por favor llame al (469) 360-5805.'
+            : 'There was a problem submitting your request. Please call us directly at (469) 360-5805.')
+      );
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -155,6 +187,11 @@ export const Contact: React.FC = () => {
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-5 text-left">
+                {errorMessage && (
+                  <div className="rounded-xl border border-red-200 bg-red-50 p-4 text-xs font-semibold text-red-700">
+                    {errorMessage}
+                  </div>
+                )}
                 <div className="grid sm:grid-cols-2 gap-4">
                   <Field
                     label={isEs ? 'Nombre Completo *' : 'Full Name *'}

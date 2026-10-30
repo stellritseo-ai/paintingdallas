@@ -6,6 +6,9 @@ export const metadata: Metadata = {
     'Expert commercial painting restoration, architectural repairs, and protective recoating in Dallas-Fort Worth. Stucco, masonry, metal, wood, lead-safe certified, 5-year warranty.',
   keywords: [
     'Commercial Painting Restoration Dallas',
+    'Commercial Facade Restoration Dallas TX',
+    'Commercial Property Repainting Services Dallas',
+    'Commercial Painting Contractors Dallas TX',
     'Stucco Restoration Dallas TX',
     'Masonry Painting Restoration Dallas',
     'Commercial Wood Replacement Painting DFW',
@@ -22,6 +25,21 @@ export const metadata: Metadata = {
     siteName: 'Painting Dallas',
     locale: 'en_US',
     type: 'website',
+    images: [
+      {
+        url: 'https://paintingdallas.com/images/restoration.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Commercial Painting Restoration Dallas TX',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Commercial Painting Restoration Dallas | Painting Dallas',
+    description:
+      'Expert commercial painting restoration, architectural repairs, and protective recoating in Dallas-Fort Worth.',
+    images: ['https://paintingdallas.com/images/restoration.jpg'],
   },
   alternates: {
     canonical: 'https://paintingdallas.com/commercial-painting-restoration',
@@ -31,6 +49,23 @@ export const metadata: Metadata = {
 const restorationJsonLd = {
   '@context': 'https://schema.org',
   '@graph': [
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'Home',
+          item: 'https://paintingdallas.com',
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: 'Commercial Painting Restoration',
+          item: 'https://paintingdallas.com/commercial-painting-restoration',
+        },
+      ],
+    },
     {
       '@type': 'Service',
       name: 'Commercial Painting Restoration Services',
